@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const BRAND_NAME = "Vœrynth Système";
 
