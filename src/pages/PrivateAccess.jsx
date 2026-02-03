@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Hero, Section } from '../components/UI';
 import SEO from '../components/SEO';
@@ -43,7 +43,7 @@ export default function PrivateAccess() {
                 setShowSuccess(true);
                 setFormState({ name: '', organization: '', email: '', interest: 'Strategic', message: '' });
             })
-            .catch(error => alert("Secure Handshake Failed. Please retry."));
+            .catch(_error => alert("Secure Handshake Failed. Please retry."));
     };
 
     return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Hero, Section } from '../components/UI';
 
@@ -146,7 +145,7 @@ export default function PrivateEstates() {
                         transition={{ duration: 1.4 }}
                     >
                         <p className="text-lg text-white/80 font-light tracking-wide mb-2">
-                            An estate should feel expansive  - 
+                            An estate should feel expansive  -
                         </p>
                         <p className="text-[#C9A961] text-lg font-light tracking-wide">
                             not complicated.
