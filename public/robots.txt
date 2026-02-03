@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://voerynth.netlify.app/sitemap.xml
