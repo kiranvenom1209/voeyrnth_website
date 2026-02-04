@@ -8,7 +8,7 @@ export const Section = ({ children, className = "", ...props }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className={`max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10 ${className}`}
+            className={`max-w-7xl mx-auto px-8 md:px-12 py-24 md:py-32 relative z-10 ${className}`}
             {...props}
         >
             {children}
@@ -40,21 +40,23 @@ export const Card = ({ title, description, hoverText, icon: Icon, delay = 0, bgI
             </>
         )}
 
-        <div className="relative z-10 h-full flex flex-col justify-end pb-4">
+        <div className="relative z-10 h-full flex flex-col justify-start">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-            <div className="mb-auto text-[#C9A961]/70">
+            <div className="text-[#C9A961]/70 mb-6">
                 {Icon && <Icon size={22} strokeWidth={1.25} />}
             </div>
 
-            <div className="transform transition-transform duration-700 group-hover:-translate-y-2">
-                <h3 className="text-xl font-medium text-white/95 mb-4 tracking-wide leading-relaxed">{title}</h3>
-                <p className="text-white/45 leading-loose text-sm font-light">{description}</p>
-                {/* Reveal on hover */}
-                <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-700 opacity-0 group-hover:opacity-100">
-                    <p className="text-[#C9A961]/80 leading-relaxed text-xs font-light mt-4 pt-4 border-t border-white/5">
-                        {hoverText}
-                    </p>
-                </div>
+            <div className="transform transition-transform duration-700 hover:-translate-y-1">
+                <h3 className="text-xl font-medium text-white/95 mb-4 tracking-wide leading-relaxed min-h-[3.5rem] flex items-center">{title}</h3>
+                <p className="text-white/45 leading-loose text-sm font-light min-h-[4.5rem]">{description}</p>
+                {/* Always visible if text exists */}
+                {hoverText && (
+                    <div className="mt-4 pt-4 border-t border-white/5">
+                        <p className="text-[#C9A961]/80 leading-relaxed text-xs font-light">
+                            {hoverText}
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
     </motion.div>
@@ -67,7 +69,7 @@ export const Tag = ({ text }) => (
 );
 
 export const Hero = ({ title, subtitle, body, children, className = "", bgImage = null }) => (
-    <section className={`relative min-h-[70vh] flex flex-col justify-center items-center text-center px-6 overflow-hidden ${className}`}>
+    <section className={`relative min-h-[70vh] flex flex-col justify-center items-center text-center px-8 md:px-12 overflow-hidden ${className}`}>
         {bgImage && (
             <div className="absolute inset-0 z-0">
                 <img

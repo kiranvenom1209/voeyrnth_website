@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Hero, Section } from '../components/UI';
 
 export default function Systeme() {
@@ -135,6 +136,15 @@ export default function Systeme() {
                             This is infrastructure that remains calm even when everything else fails.
                         </p>
                     </motion.div>
+                </div>
+            </Section>
+
+            {/* Specs Crosspost */}
+            <Section className="py-12 border-t border-white/5">
+                <div className="text-center">
+                    <Link to="/specs" className="text-sm font-light text-[#C9A961] hover:text-white transition-colors duration-500 tracking-wide border-b border-[#C9A961]/30 pb-1">
+                        View Technical Datasheet & BOM →
+                    </Link>
                 </div>
             </Section>
 

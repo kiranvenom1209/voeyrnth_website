@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Hero, Section } from '../components/UI';
 
@@ -214,6 +215,14 @@ export default function Platform() {
                             <p className="text-[#C9A961] pt-4">
                                 This is how systems earn trust over decades.
                             </p>
+                            <div className="pt-8">
+                                <Link
+                                    to="/specs"
+                                    className="inline-block px-8 py-3 border border-white/10 text-white/60 text-xs tracking-widest uppercase hover:bg-white/[0.03] hover:border-white/30 transition-all duration-500"
+                                >
+                                    View System Specifications
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

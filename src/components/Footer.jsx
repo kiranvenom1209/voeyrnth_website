@@ -1,12 +1,57 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BRAND_NAME = "Vœrynth Système";
 
 export default function Footer() {
     return (
-        <footer className="py-12 border-t border-[#D4AF37]/10 text-center relative z-10">
-            <div className="text-[#C9A961] text-lg tracking-widest mb-4">{BRAND_NAME}</div>
-            <div className="text-[10px] text-white/20 uppercase tracking-widest">
+        <footer className="py-12 border-t border-[#D4AF37]/10 text-center relative z-10 bg-[#060606]">
+            <div className="flex justify-center mb-6 opacity-95">
+                <img
+                    src="/assets/logo/logo.svg"
+                    alt="Vœrynth Logo"
+                    className="h-16 w-auto"
+                    style={{ filter: 'brightness(0) saturate(100%) invert(71%) sepia(28%) saturate(548%) hue-rotate(8deg) brightness(93%) contrast(87%)' }}
+                />
+            </div>
+            <div className="flex flex-col items-center mb-10">
+                <div className="text-[#C9A961] text-xl tracking-[0.2em] mb-2 font-light">{BRAND_NAME}</div>
+                <div className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-light">
+                    From the House of Ayanthiara
+                </div>
+            </div>
+
+            <ul className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 mb-8 text-xs tracking-widest uppercase text-white/40 font-light p-0 w-full">
+                <li>
+                    <Link to="/pricing" className="hover:text-[#C9A961] transition-colors duration-500">Pricing</Link>
+                </li>
+                <li className="hidden md:block">
+                    <span className="text-white/20">|</span>
+                </li>
+                <li>
+                    <Link to="/data-sovereignty" className="hover:text-[#C9A961] transition-colors duration-500">Data Sovereignty</Link>
+                </li>
+                <li className="hidden md:block">
+                    <span className="text-white/20">|</span>
+                </li>
+                <li>
+                    <Link to="/contact" className="hover:text-[#C9A961] transition-colors duration-500">Request Demo</Link>
+                </li>
+                <li className="hidden md:block">
+                    <span className="text-white/20">|</span>
+                </li>
+                <li>
+                    <Link to="/process" className="hover:text-[#C9A961] transition-colors duration-500">Methodology</Link>
+                </li>
+                <li className="hidden md:block">
+                    <span className="text-white/20">|</span>
+                </li>
+                <li>
+                    <Link to="/specs" className="hover:text-[#C9A961] transition-colors duration-500">System Specs</Link>
+                </li>
+            </ul>
+
+            <div className="text-[10px] text-white/20 uppercase tracking-widest font-light">
                 © {new Date().getFullYear()} Vœrynth Systems. All Rights Reserved.
             </div>
         </footer>

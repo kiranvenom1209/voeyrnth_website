@@ -23,6 +23,9 @@ const Superyachts = lazy(() => import('./pages/Superyachts'));
 const IndustrialSuites = lazy(() => import('./pages/IndustrialSuites'));
 const Energy = lazy(() => import('./pages/Energy'));
 const PrivateAccess = lazy(() => import('./pages/PrivateAccess'));
+const DataSovereignty = lazy(() => import('./pages/DataSovereignty'));
+const Process = lazy(() => import('./pages/Process'));
+const Specs = lazy(() => import('./pages/Specs'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading Fallback
@@ -96,6 +99,9 @@ export default function App() {
 
                         <Route path="/energy" element={<Energy />} />
                         <Route path="/private-access" element={<PrivateAccess />} />
+                        <Route path="/data-sovereignty" element={<DataSovereignty />} />
+                        <Route path="/process" element={<Process />} />
+                        <Route path="/specs" element={<Specs />} />
 
                         {/* 404 Route */}
                         <Route path="*" element={<NotFound />} />

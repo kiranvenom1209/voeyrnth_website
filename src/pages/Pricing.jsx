@@ -1,33 +1,24 @@
 // React import removed
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Section } from '../components/UI';
+import { Hero, Section } from '../components/UI';
 
 export default function Pricing() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative min-h-[50vh] flex flex-col justify-center items-center text-center px-6 pt-32">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="z-10 max-w-4xl"
-                >
-                    <h1 className="text-4xl md:text-5xl font-light tracking-wide text-white/95 mb-6 leading-tight">Pricing</h1>
-                    <p className="text-xl md:text-2xl text-white/65 font-light tracking-wide mb-8 leading-relaxed">
-                        Considered systems are never off-the-shelf.
-                    </p>
-                    <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
-                        Every Vœrynth system is designed around the environment it serves. <br />
-                        Pricing reflects scope, complexity, and long-term responsibility - not feature bundles.
-                    </p>
-                    <p className="text-[#C9A961] text-sm tracking-widest uppercase mb-20">
-                        We do not offer fixed packages. <br />
-                        We offer considered systems.
-                    </p>
-                </motion.div>
-            </section>
+            <Hero
+                className="pt-28"
+                title="Pricing"
+                subtitle="Considered systems are never off-the-shelf."
+                body="Every Vœrynth system is designed around the environment it serves. Pricing reflects scope, complexity, and long-term responsibility - not feature bundles."
+                bgImage="/assets/pricing_hero_bg.png"
+            >
+                <p className="text-[#C9A961] text-sm tracking-widest uppercase mb-20">
+                    We do not offer fixed packages. <br />
+                    We offer considered systems.
+                </p>
+            </Hero>
 
             {/* How Pricing Works */}
             <Section className="border-t border-white/5">
@@ -132,63 +123,69 @@ export default function Pricing() {
 
             {/* Included & Not Included */}
             <Section>
-                <div className="grid md:grid-cols-2 gap-16">
-                    <div>
-                        <h2 className="text-xl font-light text-white/90 mb-8 leading-relaxed">What Pricing Includes</h2>
-                        <ul className="space-y-4 text-white/60 font-light text-sm leading-loose">
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                System architecture and design
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                Integration logic and orchestration
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                Interface configuration
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                Documentation and auditability
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                Deployment oversight
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-[#C9A961] mt-1.5 text-xs">●</span>
-                                Post-deployment validation
-                            </li>
-                        </ul>
-                        <p className="text-white/40 text-xs mt-8 italic">We prioritise clarity, reliability, and long-term maintainability.</p>
+                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    {/* Includes Card */}
+                    <div className="p-10 border border-white/10 bg-white/[0.01] hover:bg-white/[0.02] transition-colors duration-700 flex flex-col h-full">
+                        <div className="flex-1">
+                            <h2 className="text-xl font-light text-white/95 mb-8 leading-relaxed text-center">What Pricing Includes</h2>
+                            <ul className="space-y-4 text-white/70 font-light text-sm leading-loose">
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>System architecture and design</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>Integration logic and orchestration</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>Interface configuration</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>Documentation and auditability</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>Deployment oversight</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                    <span>Post-deployment validation</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p className="text-white/30 text-xs mt-8 italic text-center border-t border-white/5 pt-6">We prioritise clarity, reliability, and long-term maintainability.</p>
                     </div>
 
-                    <div>
-                        <h2 className="text-xl font-light text-white/90 mb-8 leading-relaxed">What We Don&apos;t Do</h2>
-                        <ul className="space-y-4 text-white/60 font-light text-sm leading-loose">
-                            <li className="flex gap-3">
-                                <span className="text-white/20 mt-1.5 text-xs">✕</span>
-                                No off-the-shelf packages
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-white/20 mt-1.5 text-xs">✕</span>
-                                No feature-based pricing
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-white/20 mt-1.5 text-xs">✕</span>
-                                No rushed installations
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-white/20 mt-1.5 text-xs">✕</span>
-                                No unnecessary cloud dependencies
-                            </li>
-                            <li className="flex gap-3">
-                                <span className="text-white/20 mt-1.5 text-xs">✕</span>
-                                No &quot;set and forget&quot; systems
-                            </li>
-                        </ul>
-                        <p className="text-white/40 text-xs mt-8 italic">Every system is expected to endure.</p>
+                    {/* Don't Do Card */}
+                    <div className="p-10 border border-white/10 bg-white/[0.01] hover:bg-white/[0.02] transition-colors duration-700 flex flex-col h-full">
+                        <div className="flex-1">
+                            <h2 className="text-xl font-light text-white/95 mb-8 leading-relaxed text-center">What We Don&apos;t Do</h2>
+                            <ul className="space-y-4 text-white/70 font-light text-sm leading-loose">
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                    <span className="opacity-80">No off-the-shelf packages</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                    <span className="opacity-80">No feature-based pricing</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                    <span className="opacity-80">No rushed installations</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                    <span className="opacity-80">No unnecessary cloud dependencies</span>
+                                </li>
+                                <li className="flex gap-4 items-start">
+                                    <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                    <span className="opacity-80">No &quot;set and forget&quot; systems</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <p className="text-white/30 text-xs mt-8 italic text-center border-t border-white/5 pt-6">Every system is expected to endure.</p>
                     </div>
                 </div>
             </Section>

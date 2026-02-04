@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Hero, Section } from '../components/UI';
 import SEO from '../components/SEO';
@@ -65,6 +66,12 @@ export default function Contact() {
                 subtitle="We respond personally. No mailing lists. No noise."
                 bgImage="/assets/contact_hero_bg.png"
             />
+
+            <div className="text-center py-8">
+                <Link to="/process" className="text-xs font-light text-white/40 hover:text-[#C9A961] transition-colors duration-500 tracking-widest uppercase border-b border-transparent hover:border-[#C9A961]/30 pb-1">
+                    Understand Our Engagement Process
+                </Link>
+            </div>
 
             <Section>
                 <div className="max-w-2xl mx-auto">

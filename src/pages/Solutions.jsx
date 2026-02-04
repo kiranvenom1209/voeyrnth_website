@@ -145,12 +145,18 @@ export default function Solutions() {
                             </p>
                         </div>
 
-                        <div className="pt-8 space-x-0 md:space-x-8 space-y-4 md:space-y-0 flex flex-col md:flex-row justify-center items-center">
+                        <div className="pt-8 flex flex-col md:flex-row justify-center items-center gap-6 flex-wrap">
                             <Link
                                 to="/platform"
                                 className="px-8 py-3 border border-white/10 text-white/60 text-xs tracking-widest uppercase hover:bg-white/[0.03] hover:border-white/30 transition-all duration-500"
                             >
                                 Explore the Platform
+                            </Link>
+                            <Link
+                                to="/process"
+                                className="px-8 py-3 border border-white/10 text-white/60 text-xs tracking-widest uppercase hover:bg-white/[0.03] hover:border-white/30 transition-all duration-500"
+                            >
+                                Understand the Process
                             </Link>
                             <Link
                                 to="/contact"
@@ -165,43 +171,50 @@ export default function Solutions() {
 
             {/* Who This Is For */}
             <section className="py-24 border-t border-white/5 bg-[#080808]">
-                <div className="max-w-4xl mx-auto px-6">
+                <div className="max-w-5xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.4 }}
-                        className="grid md:grid-cols-2 gap-12"
+                        className="grid md:grid-cols-2 gap-8 items-stretch"
                     >
-                        <div>
-                            <h4 className="text-[#C9A961] text-xs tracking-[0.2em] uppercase mb-8">Designed For</h4>
-                            <ul className="space-y-4">
-                                {[
-                                    "Owners of complex environments",
-                                    "Architects and integrators",
-                                    "Operators who value predictability"
-                                ].map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-4 text-white/50 leading-relaxed text-sm font-light">
-                                        <span className="text-[#C9A961]/50 mt-1.5 text-[8px]">■</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        {/* Designed For Card */}
+                        <div className="p-10 border border-white/10 bg-white/[0.01] hover:bg-white/[0.02] transition-colors duration-700 flex flex-col h-full">
+                            <div className="flex-1">
+                                <h4 className="text-[#C9A961] text-xs tracking-[0.2em] uppercase mb-8 text-center">Designed For</h4>
+                                <ul className="space-y-4 text-white/70 font-light text-sm leading-loose">
+                                    {[
+                                        "Owners of complex environments",
+                                        "Architects and integrators",
+                                        "Operators who value predictability"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex gap-4 items-start">
+                                            <span className="text-[#C9A961] mt-1.5 text-xs shrink-0">●</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                        <div>
-                            <h4 className="text-white/30 text-xs tracking-[0.2em] uppercase mb-8">Not Designed For</h4>
-                            <ul className="space-y-4">
-                                {[
-                                    "Rapid DIY installations",
-                                    "Feature-driven experimentation",
-                                    "Always-online dependency"
-                                ].map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-4 text-white/30 leading-relaxed text-sm font-light decoration-white/10">
-                                        <span className="text-white/10 mt-1.5 text-[8px]">■</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+
+                        {/* Not Designed For Card */}
+                        <div className="p-10 border border-white/10 bg-white/[0.01] hover:bg-white/[0.02] transition-colors duration-700 flex flex-col h-full">
+                            <div className="flex-1">
+                                <h4 className="text-white/30 text-xs tracking-[0.2em] uppercase mb-8 text-center">Not Designed For</h4>
+                                <ul className="space-y-4 text-white/70 font-light text-sm leading-loose">
+                                    {[
+                                        "Rapid DIY installations",
+                                        "Feature-driven experimentation",
+                                        "Always-online dependency"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex gap-4 items-start">
+                                            <span className="text-white/20 mt-1.5 text-xs shrink-0">✕</span>
+                                            <span className="opacity-80">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
