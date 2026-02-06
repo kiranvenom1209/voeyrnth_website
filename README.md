@@ -60,6 +60,13 @@ if (document.readyState !== 'complete') return;
 ```
 Prefetching is strictly blocked until the active page has fully finished loading.
 
+### 4. 🔋 Offline Capability (PWA)
+
+The site is configured as a **Progressive Web App (PWA)** using `vite-plugin-pwa`.
+- **Service Worker**: `dist/sw.js` caches the application shell and assets on the first visit.
+- **Offline Access**: Users can open and navigate the site even without an internet connection.
+- **Repeat Performance**: Second loads are effectively 0ms latency as they load primarily from local storage.
+
 ---
 
 ## 🧩 Atomic Design Structure
