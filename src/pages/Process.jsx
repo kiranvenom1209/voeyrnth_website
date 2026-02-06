@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
-import SEO from '../components/SEO';
+import { Hero, Section } from '../components/ui';
+import SEO from '../components/core/SEO';
 import { Link } from 'react-router-dom';
 
 export default function Process() {
@@ -62,7 +62,7 @@ export default function Process() {
             <Hero
                 title="The Process"
                 subtitle="Survey. Commission. Handover."
-                bgImage="/assets/process_hero_bg.png" // Placeholder - will need asset or fallback
+                bgImage="/assets/process_hero_bg.webp" // Placeholder - will need asset or fallback
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Luxury clients buy outcomes. We deliver with an engineering playbook, not improvisation.

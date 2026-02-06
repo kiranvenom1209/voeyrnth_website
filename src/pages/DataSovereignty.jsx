@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Lock, Server, EyeOff, Key, Database, RefreshCcw, WifiOff } from 'lucide-react';
-import { Hero, Section, Card } from '../components/UI';
-import SEO from '../components/SEO';
+import { Hero, Section, Card } from '../components/ui';
+import SEO from '../components/core/SEO';
 
 export default function DataSovereignty() {
     const principles = [
@@ -55,7 +55,7 @@ export default function DataSovereignty() {
             <Hero
                 title="Sovereignty"
                 subtitle="True luxury is privacy that cannot be revoked."
-                bgImage="/assets/sovereignty_hero_bg.png"
+                bgImage="/assets/sovereignty_hero_bg.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-4">

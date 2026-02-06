@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Hero } from '../components/UI';
-import SEO from '../components/SEO';
+import { Hero } from '../components/ui';
+import SEO from '../components/core/SEO';
 
 export default function NotFound() {
     return (
@@ -14,7 +14,7 @@ export default function NotFound() {
             <Hero
                 title="404"
                 subtitle="Signal Lost."
-                bgImage="/assets/home_hero_bg.png"
+                bgImage="/assets/home_hero_bg.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-8">

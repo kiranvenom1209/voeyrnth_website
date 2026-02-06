@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Penthouses() {
     return (
         <>
+            <SEO
+                title="Penthouse Systems"
+                description="Precision living above the noise. Control systems that fade into the background, respecting the unique constraints of elevated living."
+                canonical="/penthouses"
+            />
             <Hero
                 title="Penthouses"
                 subtitle="Precision living, above the noise."
-                bgImage="/assets/penthouse_hero.png"
+                bgImage="/assets/penthouse_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Height demands restraint. What works at ground level does not belong in the sky.
@@ -70,7 +77,7 @@ export default function Penthouses() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/penthouse_detail.png"
+                    src="/assets/penthouse_detail.webp"
                     alt="Penthouse Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

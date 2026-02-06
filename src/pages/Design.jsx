@@ -1,8 +1,8 @@
 // React import removed
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function Design() {
     // ... principles array
@@ -46,7 +46,7 @@ export default function Design() {
             <Hero
                 title="Design That Behaves"
                 subtitle="Authority without aggression."
-                bgImage="/assets/design_hero_bg.png"
+                bgImage="/assets/design_hero_bg.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-4">

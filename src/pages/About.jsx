@@ -1,8 +1,8 @@
 // React import removed
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function About() {
     return (
@@ -15,7 +15,7 @@ export default function About() {
             <Hero
                 title="About Vœrynth"
                 subtitle="A systems brand built on restraint, reliability, and long-term thinking."
-                bgImage="/assets/about_hero_bg.png"
+                bgImage="/assets/about_hero_bg.webp"
             />
 
             {/* Who We Are */}

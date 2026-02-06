@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
-import SEO from '../components/SEO';
-import SuccessModal from '../components/SuccessModal';
+import { Hero, Section } from '../components/ui';
+import SEO from '../components/core/SEO';
+import SuccessModal from '../components/core/SuccessModal';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -31,16 +31,6 @@ export default function Contact() {
             body: encode({ "form-name": "contact", ...formData })
         })
             .then(async () => {
-                // Trigger the email notification
-                await fetch("/.netlify/functions/trigger-email", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        name: formData.name,
-                        email: formData.email,
-                        formName: "contact"
-                    })
-                });
-
                 setShowSuccess(true);
                 setFormData({ name: '', company: '', email: '', message: '', contactMethod: 'email' });
             })
@@ -64,7 +54,7 @@ export default function Contact() {
             <Hero
                 title="Request a Private Demo"
                 subtitle="We respond personally. No mailing lists. No noise."
-                bgImage="/assets/contact_hero_bg.png"
+                bgImage="/assets/contact_hero_bg.webp"
             />
 
             <div className="text-center py-8">

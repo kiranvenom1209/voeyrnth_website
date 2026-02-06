@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function IndustrialSuites() {
     return (
         <>
+            <SEO
+                title="Industrial Suites Control"
+                description="Clear, reliable control for industrial environments. Vœrynth filters signal from noise, ensuring operators see what matters when it matters."
+                canonical="/industrial-suites"
+            />
             <Hero
                 title="Industrial Suites"
                 subtitle="Clarity, where complexity is unavoidable."
-                bgImage="/assets/industrial_hero.png"
+                bgImage="/assets/industrial_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Industrial environments demand seriousness - not spectacle.
@@ -38,7 +45,7 @@ export default function IndustrialSuites() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/industrial_detail.png"
+                    src="/assets/industrial_detail.webp"
                     alt="Industrial Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

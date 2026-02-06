@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
-import SEO from '../components/SEO';
-import SuccessModal from '../components/SuccessModal';
+import { Hero, Section } from '../components/ui';
+import SEO from '../components/core/SEO';
+import SuccessModal from '../components/core/SuccessModal';
 
 export default function PrivateAccess() {
     const [formState, setFormState] = useState({
@@ -30,16 +30,6 @@ export default function PrivateAccess() {
             body: encode({ "form-name": "private-access", ...formState })
         })
             .then(async () => {
-                // Trigger the email notification
-                await fetch("/.netlify/functions/trigger-email", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        name: formState.name,
-                        email: formState.email,
-                        formName: "private-access"
-                    })
-                });
-
                 setShowSuccess(true);
                 setFormState({ name: '', organization: '', email: '', interest: 'Strategic', message: '' });
             })
@@ -56,7 +46,7 @@ export default function PrivateAccess() {
             <Hero
                 title="Strategic Capital"
                 subtitle="For those who build quietly."
-                bgImage="/assets/private_access_hero.png"
+                bgImage="/assets/private_access_hero.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-4">
@@ -131,7 +121,7 @@ export default function PrivateAccess() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/private_access_detail.png"
+                    src="/assets/private_access_detail.webp"
                     alt="Private Access Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

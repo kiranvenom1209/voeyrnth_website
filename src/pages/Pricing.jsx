@@ -1,18 +1,25 @@
 // React import removed
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Pricing() {
     return (
         <>
+            <SEO
+                title="Pricing Strategy"
+                description="Transparent, scope-based pricing for architecture, integration, and ongoing stewardship. No fixed packages, no hidden costs."
+                canonical="/pricing"
+            />
             {/* Hero Section */}
             <Hero
                 className="pt-28"
                 title="Pricing"
                 subtitle="Considered systems are never off-the-shelf."
                 body="Every Vœrynth system is designed around the environment it serves. Pricing reflects scope, complexity, and long-term responsibility - not feature bundles."
-                bgImage="/assets/pricing_hero_bg.png"
+                bgImage="/assets/pricing_hero_bg.webp"
             >
                 <p className="text-[#C9A961] text-sm tracking-widest uppercase mb-20">
                     We do not offer fixed packages. <br />

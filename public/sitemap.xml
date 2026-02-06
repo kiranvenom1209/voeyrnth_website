@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://voerynth.netlify.app/</loc>
+        <loc>https://voerynth.de/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/platform</loc>
+        <loc>https://voerynth.de/platform</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/solutions</loc>
+        <loc>https://voerynth.de/solutions</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/design</loc>
+        <loc>https://voerynth.de/design</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/security</loc>
+        <loc>https://voerynth.de/security</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/about</loc>
+        <loc>https://voerynth.de/about</loc>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/private-access</loc>
+        <loc>https://voerynth.de/private-access</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/pricing</loc>
+        <loc>https://voerynth.de/pricing</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://voerynth.netlify.app/contact</loc>
+        <loc>https://voerynth.de/contact</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>

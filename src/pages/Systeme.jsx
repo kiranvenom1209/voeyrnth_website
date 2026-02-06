@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Systeme() {
     const principles = [
@@ -29,10 +31,15 @@ export default function Systeme() {
 
     return (
         <>
+            <SEO
+                title="Système - Core Architecture"
+                description="The architectural backbone of Vœrynth. Engineering discipline replacing improvisation. Deterministic control systems for critical environments."
+                canonical="/systeme"
+            />
             <Hero
                 title="Système"
                 subtitle="Infrastructure, built to last."
-                bgImage="/assets/systeme_hero_bg.png"
+                bgImage="/assets/systeme_hero_bg.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Système is the invisible foundation beneath Vœrynth. It is where engineering discipline replaces improvisation - and where reliability is designed, not hoped for.

@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Energy() {
     return (
         <>
+            <SEO
+                title="Energy Orchestration"
+                description="Real-time energy monitoring, load balancing, and optimization for private estates and critical facilities. Independence through intelligence."
+                canonical="/energy"
+            />
             <Hero
                 title="Energy Orchestration"
                 subtitle="Intelligence that respects resources."
-                bgImage="/assets/energy_hero.png"
+                bgImage="/assets/energy_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Energy is not a commodity to consume blindly. It is a system to be governed.
@@ -38,7 +45,7 @@ export default function Energy() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/energy_detail.png"
+                    src="/assets/energy_detail.webp"
                     alt="Energy Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

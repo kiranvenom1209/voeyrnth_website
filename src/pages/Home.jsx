@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
+import SmartLink from '../components/core/SmartLink';
 import { motion } from 'framer-motion';
 import { Server, Activity, Cpu, Shield } from 'lucide-react';
-import { Section, Card, Tag } from '../components/UI';
-import logo from '/assets/logo/logo.svg';
+import { Section, Card, Tag, Hero } from '../components/ui';
+const logo = '/assets/logo/logo.svg';
 
 const BRAND_NAME = "Vœrynth Système";
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function Home() {
     return (
@@ -20,7 +21,7 @@ export default function Home() {
                 {/* Hero Background Image with warm treatment */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/assets/home_hero_bg.png"
+                        src="/assets/home_hero_bg.webp"
                         alt="Interior Ambiance"
                         className="w-full h-full object-cover opacity-50 saturate-[0.9] sepia-[0.05] brightness-90"
                         style={{ filter: 'saturate(0.9) sepia(0.05) brightness(0.9) contrast(1.05) hue-rotate(5deg)' }}
@@ -61,12 +62,12 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <Link to="/contact" className="bg-[#D4AF37] text-black px-8 py-3 text-sm tracking-widest hover:bg-[#C9A961] transition-all duration-700 w-full md:w-auto font-medium shadow-lg shadow-[#D4AF37]/10">
+                        <SmartLink to="/contact" className="bg-[#D4AF37] text-black px-8 py-3 text-sm tracking-widest hover:bg-[#C9A961] transition-all duration-700 w-full md:w-auto font-medium shadow-lg shadow-[#D4AF37]/10">
                             REQUEST PRIVATE DEMO
-                        </Link>
-                        <Link to="/platform" className="border border-white/15 text-white/90 px-8 py-3 text-sm tracking-widest hover:border-[#D4AF37]/40 hover:bg-white/[0.03] transition-all duration-700 w-full md:w-auto backdrop-blur-sm">
+                        </SmartLink>
+                        <SmartLink to="/platform" className="border border-white/15 text-white/90 px-8 py-3 text-sm tracking-widest hover:border-[#D4AF37]/40 hover:bg-white/[0.03] transition-all duration-700 w-full md:w-auto backdrop-blur-sm">
                             EXPLORE THE PLATFORM
-                        </Link>
+                        </SmartLink>
                     </div>
 
                     <div className="mt-20 border-t border-[#D4AF37]/10 pt-8 inline-block">
@@ -87,33 +88,33 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="md:col-span-8 grid md:grid-cols-2 gap-8 md:gap-6">
-                        <Link to="/systeme" className="block h-full">
+                        <SmartLink to="/systeme" className="block h-full">
                             <Card
                                 title="Système"
                                 description="The engineering foundation - architecture, reliability, deterministic orchestration."
                                 icon={Server}
                                 delay={0.1}
-                                bgImage="/assets/home_card_systeme.png"
+                                bgImage="/assets/home_card_systeme.webp"
                             />
-                        </Link>
-                        <Link to="/os" className="block h-full">
+                        </SmartLink>
+                        <SmartLink to="/os" className="block h-full">
                             <Card
                                 title="OS"
                                 description="The human interface - a neural-style control layer built for clarity and restraint."
                                 icon={Activity}
                                 delay={0.2}
-                                bgImage="/assets/home_card_os.png"
+                                bgImage="/assets/home_card_os.webp"
                             />
-                        </Link>
-                        <Link to="/automations" className="block h-full">
+                        </SmartLink>
+                        <SmartLink to="/automations" className="block h-full">
                             <Card
                                 title="Automations"
                                 description="Integration and deployment across physical systems and environments."
                                 icon={Cpu}
                                 delay={0.3}
-                                bgImage="/assets/home_card_auto.png"
+                                bgImage="/assets/home_card_auto.webp"
                             />
-                        </Link>
+                        </SmartLink>
                     </div>
                 </div>
             </Section>
@@ -149,12 +150,12 @@ export default function Home() {
                             ))}
                         </div>
 
-                        <Link
+                        <SmartLink
                             to="/platform"
                             className="inline-block border border-[#D4AF37]/30 text-[#C9A961] px-8 py-3 text-sm tracking-widest hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-700"
                         >
                             VIEW PLATFORM ARCHITECTURE
-                        </Link>
+                        </SmartLink>
                     </motion.div>
                 </div>
             </section>
@@ -171,7 +172,7 @@ export default function Home() {
                         { title: "Security & Surveillance", link: "/security" },
                         { title: "Energy Orchestration", link: "/energy" }
                     ].map((item, idx) => (
-                        <Link to={item.link} key={idx} className="block h-full">
+                        <SmartLink to={item.link} key={idx} className="block h-full">
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
@@ -181,16 +182,16 @@ export default function Home() {
                             >
                                 <h3 className="text-base font-normal text-white/90 leading-relaxed">{item.title}</h3>
                             </motion.div>
-                        </Link>
+                        </SmartLink>
                     ))}
                 </div>
                 <div className="text-center">
-                    <Link
+                    <SmartLink
                         to="/solutions"
                         className="inline-block border border-[#D4AF37]/30 text-[#C9A961] px-8 py-3 text-sm tracking-widest hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-700"
                     >
                         EXPLORE SOLUTIONS
-                    </Link>
+                    </SmartLink>
                 </div>
             </Section>
 
@@ -202,12 +203,12 @@ export default function Home() {
                         Every {BRAND_NAME} system is designed around its environment. <br />
                         Pricing reflects scope, responsibility, and longevity - not feature lists.
                     </p>
-                    <Link
+                    <SmartLink
                         to="/pricing"
                         className="text-[#C9A961] hover:text-white transition-colors duration-500 text-sm tracking-wide border-b border-[#C9A961]/30 pb-1"
                     >
                         View Pricing Approach →
-                    </Link>
+                    </SmartLink>
                 </div>
             </Section>
 
@@ -222,12 +223,12 @@ export default function Home() {
                             <span className="text-xs tracking-widest uppercase">Security & Privacy</span>
                         </div>
                         <h2 className="text-3xl font-light mb-6 leading-relaxed">Privacy Is Not a Setting. <br />It&apos;s the Default.</h2>
-                        <Link
+                        <SmartLink
                             to="/security"
                             className="inline-block border border-[#D4AF37]/30 text-[#C9A961] px-8 py-3 text-sm tracking-widest hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-700"
                         >
                             SECURITY & PRIVACY
-                        </Link>
+                        </SmartLink>
                     </div>
                 </div>
             </Section>
@@ -238,29 +239,29 @@ export default function Home() {
                     <h2 className="text-3xl font-light text-white/95 mb-12 lead-relaxed">Considering a {BRAND_NAME} system for your estate?</h2>
 
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <Link
+                        <SmartLink
                             to="/contact"
                             className="bg-[#D4AF37] text-black px-8 py-4 text-sm tracking-widest hover:bg-[#C9A961] transition-all duration-700 font-medium rounded shadow-lg shadow-[#D4AF37]/10 w-full md:w-auto"
                         >
                             REQUEST A PRIVATE DEMO
-                        </Link>
-                        <Link
+                        </SmartLink>
+                        <SmartLink
                             to="/pricing"
                             className="text-white/60 hover:text-[#C9A961] transition-colors duration-500 text-sm tracking-widest px-8 py-4"
                         >
                             VIEW PRICING
-                        </Link>
+                        </SmartLink>
                     </div>
                 </div>
             </section >
             {/* Private Access Subtle Link */}
             <div className="flex justify-center pb-8 pt-4">
-                <Link
+                <SmartLink
                     to="/private-access"
                     className="text-[10px] text-white/20 tracking-wider hover:text-white/40 transition-colors duration-500 font-light"
                 >
                     Vœrynth is privately developed. Strategic conversations are welcomed.
-                </Link>
+                </SmartLink>
             </div>
         </>
     );

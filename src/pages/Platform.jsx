@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function Platform() {
     const layers = [
@@ -78,7 +78,7 @@ export default function Platform() {
             <Hero
                 title="The Platform"
                 subtitle="Architecture built for environments that cannot afford drama."
-                bgImage="/assets/platform_hero_bg.png"
+                bgImage="/assets/platform_hero_bg.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-4">

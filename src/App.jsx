@@ -1,32 +1,20 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
 import './index.css';
 
-// Lazy Loaded Pages
-const Home = lazy(() => import('./pages/Home'));
-const Platform = lazy(() => import('./pages/Platform'));
-const Solutions = lazy(() => import('./pages/Solutions'));
-const Design = lazy(() => import('./pages/Design'));
-const Security = lazy(() => import('./pages/Security'));
-const About = lazy(() => import('./pages/About'));
-const Pricing = lazy(() => import('./pages/Pricing'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Systeme = lazy(() => import('./pages/Systeme'));
-const OS = lazy(() => import('./pages/OS'));
-const Automations = lazy(() => import('./pages/Automations'));
-const PrivateEstates = lazy(() => import('./pages/PrivateEstates'));
-const Penthouses = lazy(() => import('./pages/Penthouses'));
-const Superyachts = lazy(() => import('./pages/Superyachts'));
-const IndustrialSuites = lazy(() => import('./pages/IndustrialSuites'));
-const Energy = lazy(() => import('./pages/Energy'));
-const PrivateAccess = lazy(() => import('./pages/PrivateAccess'));
-const DataSovereignty = lazy(() => import('./pages/DataSovereignty'));
-const Process = lazy(() => import('./pages/Process'));
-const Specs = lazy(() => import('./pages/Specs'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+// Lazy Loaded Pages via routes
+import { routes } from './config/routes';
+
+// Helper to wrap lazy imports
+const getElement = (path) => {
+    const config = routes[path];
+    if (!config) return null;
+    const Component = lazy(config.component);
+    return <Component />;
+};
 
 // Loading Fallback
 const Loading = () => (
@@ -81,30 +69,13 @@ export default function App() {
 
                 <Suspense fallback={<Loading />}>
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/platform" element={<Platform />} />
-                        <Route path="/solutions" element={<Solutions />} />
-                        <Route path="/design" element={<Design />} />
-                        <Route path="/security" element={<Security />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/pricing" element={<Pricing />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/systeme" element={<Systeme />} />
-                        <Route path="/os" element={<OS />} />
-                        <Route path="/automations" element={<Automations />} />
-                        <Route path="/private-estates" element={<PrivateEstates />} />
-                        <Route path="/penthouses" element={<Penthouses />} />
-                        <Route path="/superyachts" element={<Superyachts />} />
-                        <Route path="/industrial-suites" element={<IndustrialSuites />} />
-
-                        <Route path="/energy" element={<Energy />} />
-                        <Route path="/private-access" element={<PrivateAccess />} />
-                        <Route path="/data-sovereignty" element={<DataSovereignty />} />
-                        <Route path="/process" element={<Process />} />
-                        <Route path="/specs" element={<Specs />} />
-
+                        <Route path="/" element={getElement('/')} />
+                        {Object.keys(routes).map(path => {
+                            if (path === '/' || path === '*') return null;
+                            return <Route key={path} path={path} element={getElement(path)} />;
+                        })}
                         {/* 404 Route */}
-                        <Route path="*" element={<NotFound />} />
+                        <Route path="*" element={getElement('*')} />
                     </Routes>
                 </Suspense>
 

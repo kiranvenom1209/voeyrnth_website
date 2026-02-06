@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function Security() {
     return (
@@ -15,7 +15,7 @@ export default function Security() {
             <Hero
                 title="Security & Surveillance"
                 subtitle="Awareness without paranoia."
-                bgImage="/assets/security_hero.png"
+                bgImage="/assets/security_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     True security is composed, not reactive.
@@ -48,7 +48,7 @@ export default function Security() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/security_detail.png"
+                    src="/assets/security_detail.webp"
                     alt="Security Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

@@ -29,77 +29,135 @@ This project is built using a modern, high-performance technology stack designed
 - **Icons**: [Lucide React](https://lucide.dev/) - Clean, consistent iconography.
 - **SEO**: [React Helmet Async](https://www.npmjs.com/package/react-helmet-async) - Managing document head for SEO.
 
-### Directory Structure
+---
 
+## ⚡ The "Instant Navigation" Engine
+
+The platform implements a bespoke prefetching system designed to eliminate perceived latency. This system creates a "localhost-like" feel by aggressively pre-loading resources before the user clicks.
+
+### 1. The Route Registry (`src/config/routes.js`)
+Unlike standard routers that just map paths to components, our registry maps paths to **resources**:
+```javascript
+'/about': {
+    component: () => import('../pages/About'),      // The Code (Lazy Loaded Chunk)
+    preload: ['/assets/about_hero_bg.webp']         // The Assets (Critical Images)
+}
 ```
+
+### 2. The SmartLink Triggers (`src/components/core/SmartLink.jsx`)
+We wrap `react-router-dom`'s Link component to detect user intent:
+- **Desktop**: Listens for `onMouseEnter`.
+- **Mobile**: Listens for `onTouchStart`.
+
+When triggered, the system:
+1.  **Fetches Code**: Calls the dynamic import immediately.
+2.  **Fetches Content**: Creates a hidden `Image` object to force the browser to download the large Hero background.
+
+### 3. The Safety Guard
+To prevent aggressive prefetching from slowing down the *current* page load (bandwidth competition), the system includes a check:
+```javascript
+if (document.readyState !== 'complete') return;
+```
+Prefetching is strictly blocked until the active page has fully finished loading.
+
+---
+
+## 🧩 Atomic Design Structure
+
+The project has been refactored (Feb 2026) to follow a strict Atomic/Modular design philosophy:
+
+### `src/components/ui/` (Atoms & Molecules)
+Low-level, reusable visual primitives. These contain **no business logic**.
+- `Hero.jsx`: Standardized page headers with background image handling.
+- `Card.jsx`: Interactive cards for grid layouts.
+- `Section.jsx`: Wrapper for consistent padding and animation entry.
+- `Tag.jsx`: Stylized text badges.
+
+### `src/components/layout/` (Organisms)
+Structural components that appear on every page.
+- `Navigation.jsx`: The main top bar.
+- `Footer.jsx`: The site footer.
+- `ScrollToTop.jsx`: Utility to reset scroll position on route change.
+
+### `src/components/core/` (System Logic)
+Non-visual or logic-heavy components.
+- `SEO.jsx`: Manages `<head>` tags (Title, Meta Description, Canonical URLs).
+- `SmartLink.jsx`: The prefetching logic described above.
+- `SuccessModal.jsx`: Feedback overlay for form submissions.
+
+### `src/pages/` (Templates)
+The actual views (Home, About, Contact). These components strictly compose `ui` and `layout` elements. They should contain minimal styling, focusing instead on content and structure.
+
+---
+
+## 📨 Forms & Netlify Integration
+
+The project uses [Netlify Forms](https://docs.netlify.com/forms/setup/) for serverless data collection.
+
+### How It Works
+1.  **Frontend**: Forms (in `Contact.jsx` and `PrivateAccess.jsx`) include a hidden input: `<input type="hidden" name="form-name" value="contact" />`.
+2.  **Build Time**: Netlify's build bots scan the HTML (generated during the build) for this attribute and automatically create a backend handler.
+3.  **Submission**: Data is sent via a standard `POST` request to `/`.
+4.  **Dashboard**: Submissions appear instantly in the Netlify project dashboard.
+
+*Note: Custom serverless functions (e.g., `trigger-email`) have been deprecated in favor of this native integration.*
+
+---
+
+## 📂 Directory Structure
+
+```text
 voerynth-website/
-├── public/              # Static assets (images, icons, etc.)
+├── public/                  # Static public assets
+│   ├── assets/              # WebP images and media
+│   └── bimi/                # Brand indicators
 ├── src/
-│   ├── components/      # Reusable UI components (Nav, Footer, etc.)
-│   ├── pages/           # Application route pages
-│   ├── App.jsx          # Main application component / Router setup
-│   ├── main.jsx         # Entry point
-│   ├── index.css        # Global styles and Tailwind directives
-│   └── ...
-├── .eslintrc.cjs        # Linting configuration
-├── tailwind.config.js   # Tailwind customization config
-├── vite.config.js       # Vite build configuration
-└── package.json         # Project dependencies and scripts
+│   ├── components/
+│   │   ├── core/            # System logic (SEO, SmartLink)
+│   │   ├── layout/          # Global structure (Nav, Footer)
+│   │   └── ui/              # Visual primitives (Hero, Card)
+│   ├── config/              # Central configuration (routes.js)
+│   ├── pages/               # Route views
+│   ├── App.jsx              # Router entry point
+│   ├── main.jsx             # React entry point
+│   └── index.css            # Tailwind directives
+├── templates/
+│   └── email/               # HTML Email templates (Reference only)
+├── netlify.toml             # Deployment settings
+└── package.json             # Dependencies
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-*Note: Access to this repository is restricted to authorized Vœrynth Système personnel only.*
-
 ### Prerequisites
-- **Node.js**: (Version 18.0.0 or higher recommended)
-- **npm** or **yarn**
+- Node.js (v18+)
+- npm
 
 ### Installation
+```bash
+git clone https://github.com/kiranvenom1209/voeyrnth_website.git
+cd voeyrnth_website
+npm install
+```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/kiranvenom1209/voeyrnth_website.git
-    cd voeyrnth_website
-    ```
+### Development
+```bash
+npm run dev
+```
+Starts local server at `http://localhost:5173`.
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Start the development server:**
-    ```bash
-    npm run dev
-    ```
-    The application will launch at `http://localhost:5173`.
-
-### Building for Production
-
-To create an optimized production build:
-
+### Production Build
 ```bash
 npm run build
 ```
-The output will be in the `dist/` directory, ready for deployment.
-
----
-
-## 🌐 Deployment
-
-The site is configured for deployment on Netlify, but the build output is standard static HTML/CSS/JS and can be hosted on any modern web host.
+Generates optimized static files in `dist/`.
 
 ---
 
 ## 🛡️ Security & Compliance
 
-This codebase adheres to strict internal security protocols.
-- **No external tracking** without explicit consent.
-- **Secure architecture** designed to prevent XSS and injection attacks.
-- **Code Integrity**: All commits must be signed and reviewed.
-
----
-
-**Vœrynth Système** — *Defining the Future of Autonomous Living.*
+- **Zero Telemetry**: We do not use Google Analytics or third-party trackers.
+- **Local Sovereignty**: Architecture is designed to run locally if needed.
+- **Dependencies**: All packages are locked via `package-lock.json` to prevent supply chain drift.

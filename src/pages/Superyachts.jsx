@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Superyachts() {
     return (
         <>
+            <SEO
+                title="Superyacht Systems"
+                description="Fully offline, redundant control for maritime environments. Systems that remain sovereign and do not depend on connectivity."
+                canonical="/superyachts"
+            />
             <Hero
                 title="Superyachts"
                 subtitle="Control that respects the sea."
-                bgImage="/assets/yacht_hero.png"
+                bgImage="/assets/yacht_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     At sea, assumptions fail quickly. Systems must be sovereign.
@@ -70,7 +77,7 @@ export default function Superyachts() {
             {/* Mid-page image: Detail */}
             <div className="w-full h-[60vh] relative overflow-hidden my-12">
                 <img
-                    src="/assets/yacht_detail.png"
+                    src="/assets/yacht_detail.webp"
                     alt="Yacht Detail"
                     className="w-full h-full object-cover opacity-80"
                 />

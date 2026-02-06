@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Home, Building2, Ship, Factory, Shield, Zap } from 'lucide-react';
-import { Hero, Section, Card } from '../components/UI';
+import { Hero, Section, Card } from '../components/ui';
 
-import SEO from '../components/SEO';
+import SEO from '../components/core/SEO';
 
 export default function Solutions() {
     // ... existing layer constants ...
@@ -14,7 +14,7 @@ export default function Solutions() {
             description: "Unified control for complex properties.",
             hoverText: "Multi-structure, long-lifecycle environments with zero tolerance for chaos.",
             icon: Home,
-            bgImage: "/assets/sol_card_estate.png",
+            bgImage: "/assets/sol_card_estate.webp",
             link: "/private-estates"
         },
         // ... (rest of solutions array, keeping it collapsed for brevity if tool supports, otherwise I will just replace the top)
@@ -23,7 +23,7 @@ export default function Solutions() {
             description: "Minimal interface. Maximum orchestration.",
             hoverText: "Dense urban residences where restraint and reliability are paramount.",
             icon: Building2,
-            bgImage: "/assets/sol_card_penthouse.png",
+            bgImage: "/assets/sol_card_penthouse.webp",
             link: "/penthouses"
         },
         {
@@ -31,7 +31,7 @@ export default function Solutions() {
             description: "Offline capability. Layered safety.",
             hoverText: "Mobile, autonomous systems designed to function beyond connectivity.",
             icon: Ship,
-            bgImage: "/assets/sol_card_yacht.png",
+            bgImage: "/assets/sol_card_yacht.webp",
             link: "/superyachts"
         },
         {
@@ -39,7 +39,7 @@ export default function Solutions() {
             description: "Operator-grade monitoring without noise.",
             hoverText: "Operator-grade environments requiring auditability and predictability.",
             icon: Factory,
-            bgImage: "/assets/sol_card_industrial.png",
+            bgImage: "/assets/sol_card_industrial.webp",
             link: "/industrial-suites"
         },
         {
@@ -47,7 +47,7 @@ export default function Solutions() {
             description: "Presence intelligence with audit trails.",
             hoverText: "Presence awareness designed to observe without intrusion.",
             icon: Shield,
-            bgImage: "/assets/sol_card_security.png",
+            bgImage: "/assets/sol_card_security.webp",
             link: "/security"
         },
         {
@@ -55,7 +55,7 @@ export default function Solutions() {
             description: "Autonomous load balancing and efficiency.",
             hoverText: "Load, storage, and distribution treated as a single system.",
             icon: Zap,
-            bgImage: "/assets/platform_hero_bg.png",
+            bgImage: "/assets/platform_hero_bg.webp",
             link: "/energy"
         }
     ];
@@ -70,7 +70,7 @@ export default function Solutions() {
             <Hero
                 title="Solutions"
                 subtitle="Vœrynth adapts to the domain. The discipline stays constant."
-                bgImage="/assets/solutions_hero_bg.png"
+                bgImage="/assets/solutions_hero_bg.webp"
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p className="mb-4">

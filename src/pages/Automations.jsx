@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function Automations() {
     const philosophy = [
@@ -26,10 +28,15 @@ export default function Automations() {
 
     return (
         <>
+            <SEO
+                title="Automations & Orchestration"
+                description="Secure, deterministic automation that adapts to your environment. No automation without consent. Context over triggers."
+                canonical="/automations"
+            />
             <Hero
                 title="Automations"
                 subtitle="Orchestration, not spectacle."
-                bgImage="/assets/automations_hero_bg.png"
+                bgImage="/assets/automations_hero_bg.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Automation at Vœrynth is not about doing more - it is about doing less, more precisely.

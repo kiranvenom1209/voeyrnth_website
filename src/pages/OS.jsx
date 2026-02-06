@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function OS() {
     const philosophy = [
@@ -26,10 +28,15 @@ export default function OS() {
 
     return (
         <>
+            <SEO
+                title="Vœrynth OS - Interface"
+                description="A human interface layer built for clarity and restraint. It removes friction, reduces decision fatigue, and presents control only when necessary."
+                canonical="/os"
+            />
             <Hero
                 title="OS"
                 subtitle="Control, without cognitive noise."
-                bgImage="/assets/os_hero_bg.png"
+                bgImage="/assets/os_hero_bg.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     OS is how you experience Vœrynth - not as software, but as a composed presence within your space.

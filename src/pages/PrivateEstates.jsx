@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
+import { Hero, Section } from '../components/ui';
+
+import SEO from '../components/core/SEO';
 
 export default function PrivateEstates() {
     return (
         <>
+            <SEO
+                title="Private Estate Control"
+                description="Coherent control across large estates. Vœrynth behaves like infrastructure, managing main residences, guest houses, and grounds as a single system."
+                canonical="/private-estates"
+            />
             <Hero
                 title="Private Estates"
                 subtitle="Where scale disappears into simplicity."
-                bgImage="/assets/estates_hero.png"
+                bgImage="/assets/estates_hero.webp"
             >
                 <p className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     Large estates do not fail from lack of technology - they fail when technology refuses to behave like the estate itself.
@@ -40,7 +47,7 @@ export default function PrivateEstates() {
             {/* Mid-page image: Full width interior */}
             <div className="w-full h-[60vh] relative overflow-hidden">
                 <img
-                    src="/assets/estates_detail.png"
+                    src="/assets/estates_detail.webp"
                     alt="Estate Interior"
                     className="w-full h-full object-cover opacity-80"
                 />
@@ -146,7 +153,7 @@ export default function PrivateEstates() {
                         transition={{ duration: 1.4 }}
                     >
                         <p className="text-lg text-white/80 font-light tracking-wide mb-2">
-                            An estate should feel expansive  - 
+                            An estate should feel expansive  -
                         </p>
                         <p className="text-[#C9A961] text-lg font-light tracking-wide">
                             not complicated.

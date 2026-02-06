@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Hero, Section } from '../components/UI';
-import SEO from '../components/SEO';
+import { Hero, Section } from '../components/ui';
+import SEO from '../components/core/SEO';
 import { Link } from 'react-router-dom';
 
 export default function Specs() {
@@ -57,7 +57,7 @@ export default function Specs() {
             <Hero
                 title="Specifications"
                 subtitle="The Iceberg Architecture."
-                bgImage="/assets/specs_hero_bg.png" // Placeholder
+                bgImage="/assets/specs_hero_bg.webp" // Placeholder
             >
                 <div className="max-w-2xl mx-auto text-white/40 text-sm leading-loose mb-12 font-light">
                     <p>
