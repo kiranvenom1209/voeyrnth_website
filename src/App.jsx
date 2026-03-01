@@ -71,21 +71,28 @@ function LanguageSync() {
     return null;
 }
 
-export default function App() {
-    const [mounted, setMounted] = useState(false);
+// Component to handle scroll restoration
+function ScrollHandler() {
     const location = useLocation();
     const navType = useNavigationType();
 
     useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    const handleExitComplete = () => {
-        // Only scroll to top on new navigations. On POP (back/forward), let the browser preserve scroll position.
+        // Only scroll to top on new navigations (PUSH/REPLACE). 
+        // On POP (back/forward button), allow the browser to restore the previous scroll position.
         if (navType !== 'POP') {
             window.scrollTo(0, 0);
         }
-    };
+    }, [location.pathname, navType]);
+
+    return null;
+}
+
+export default function App() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <LanguageTransitionProvider>
@@ -95,6 +102,7 @@ export default function App() {
                     <div className="fixed inset-0 pointer-events-none z-0" />
 
                     {/* Noise Overlay removed per user request */}
+                    <ScrollHandler />
                     <Navigation />
                     <LanguageSync />
                     <LanguageModal />
