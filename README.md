@@ -111,8 +111,27 @@ To ensure fluid 60FPS scrolling and zero frame-drops even on older Intel hardwar
 
 ---
 
-## 🔄 9. Recent Updates (Feb/March 2026)
+## 🧠 9. Cutting-Edge UX & Routing Architecture (March 2026)
 
+To deliver a truly native, app-like feel on the web, we completely re-engineered the routing and animation state machines:
+
+### 1. Smart Scroll Restoration
+- Built a custom React Router `useNavigationType()` interceptor into the Framer Motion `AnimatePresence` exit handler.
+- If a user navigates naturally (`PUSH`), the viewport smoothly scrolls to the top of the incoming page.
+- If a user uses the browser's Back/Forward history (`POP`), the engine skips the forced scroll, allowing the native browser APIs to instantaneously restore the exact `(x, y)` scroll depth the user was at previously, right alongside the specific CTA or card they clicked.
+
+### 2. Cinematic Route Physics & Safari Acceleration
+- The standard page transitions were re-architected with a luxurious `0.6s` animation duration, gliding on a mathematically precise cubic-bezier ease-out curve (`[0.22, 1, 0.36, 1]`).
+- Eliminated choppy SVG blur filters on exit and strictly injected `will-change: opacity, transform` hints onto the routing wrappers. This forces modern browsers to pre-allocate GPU memory for the incoming DOM tree before the animation even starts, guaranteeing absolutely flawless 60FPS precision.
+- Implemented specific compositing hints (`translate3d(0,0,0)`) on fixed background elements to bypass Safari's notorious WebKit layout thrashing.
+
+### 3. PWA Ecosystem Stability
+- Fixed critical Service Worker Workbox installation halts to guarantee persistent offline capability.
+- Ensured total native caching reliability by allowing Workbox to handle dynamic cryptographic revisions internally, solidifying the 'Zero-Latency' repeat-load architecture.
+
+---
+
+## 🔄 10. Recent Updates (Feb/March 2026)
 - **Performance Overhaul (March 2026):** Full removal of expensive CSS blurs, LazyMotion implementation for tree-shaking, and font-preloading to eliminate FOUT and strictly enforce 60FPS scrolling on legacy hardware.
 - **Advanced PWA Cache Busting:** Implemented a robust strategy using `_v2` asset suffixing to resolve aggressive mobile caching, ensuring users always receive the latest UI assets.
 - **Dynamic SEO & Metadata Engine:** Updated `llms.txt`, `llm-full.txt`, and synchronized `sitemap.xml` with the latest deep pages. Restructured routing to prevent metadata staleness.
