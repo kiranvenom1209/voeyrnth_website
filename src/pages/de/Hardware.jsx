@@ -70,6 +70,8 @@ export default function DeHardware() {
                                             { cat: "Kabelgebundenes Gateway", model: "KNX IP Interface", notes: "Stabile Topologie; versionsgebunden", rep: "Durch gleiche Klasse ersetzen; Bundle wiederherstellen" },
                                             { cat: "Mesh-Koordinator", model: "Zigbee-Koordinator", notes: "Zertifizierte Firmware; überwacht", rep: "Ersetzen, per Inbetriebnahme-Prozedur neu koppeln" },
                                             { cat: "Mesh-Controller", model: "Z-Wave-Controller", notes: "Zertifizierte Region; überwacht", rep: "Ersetzen, Netzwerkschlüssel wiederherstellen" },
+                                            { cat: "Mesh-Protokoll", model: "Thread Border Router", notes: "Zertifizierte Firmware; überwacht", rep: "Ersetzen, Netzwerkschlüssel wiederherstellen" },
+                                            { cat: "Integrationsstandard", model: "Matter-Bridge", notes: "Nur lokale Steuerung; verifizierter Hersteller", rep: "Ersetzen, Fabric neu authentifizieren" }
                                         ].map((row, idx) => (
                                             <tr key={idx} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                                                 <td className="py-6 pr-6 text-[#C9A961] font-medium">{row.cat}</td>
@@ -95,6 +97,8 @@ export default function DeHardware() {
                                         {[
                                             { cat: "Bluetooth-Gateway", model: "BLE-Bridge", cond: "Erlaubt für Komfort; nicht für sicherheitskritische Steuerung" },
                                             { cat: "Consumer-Hubs", model: "Generische Hubs", cond: "Nur als isolierte Grenzgeräte; keine Kernabhängigkeit" },
+                                            { cat: "IP-Geräte", model: "WLAN-basierte Geräte", cond: "Nur im isolierten VLAN; feste IP-Zuweisung erforderlich" },
+                                            { cat: "Ökosystem", model: "Apple HomeKit", cond: "Nur als sekundäre UI; Automatisierungslogik verbleibt im Kern" }
                                         ].map((row, idx) => (
                                             <tr key={idx} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                                                 <td className="py-6 pr-6 text-white/80">{row.cat}</td>

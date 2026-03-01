@@ -103,6 +103,8 @@ const Hardware = () => {
                                             { cat: "Wired Gateway", model: "KNX IP Interface", notes: "Stable topology; version-pinned", rep: "Replace with same class; restore config bundle" },
                                             { cat: "Mesh Coordinator", model: "Zigbee Coordinator", notes: "Certified firmware; monitored health", rep: "Replace, re-pair via commissioning procedure" },
                                             { cat: "Mesh Controller", model: "Z-Wave Controller", notes: "Certified region; monitored health", rep: "Replace, restore network keys; validate node health" },
+                                            { cat: "Mesh Protocol", model: "Thread Border Router", notes: "Certified firmware; monitored health", rep: "Replace, restore network keys" },
+                                            { cat: "Integration Standard", model: "Matter Bridge", notes: "Local control only; verified vendor", rep: "Replace, re-authenticate fabric" }
                                         ].map((row, idx) => (
                                             <tr key={idx} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                                                 <td className="py-6 pr-6 text-[#C9A961] font-medium">{row.cat}</td>
@@ -135,6 +137,8 @@ const Hardware = () => {
                                         {[
                                             { cat: "Bluetooth Gateway", model: "BLE Bridge", cond: "Allowed for convenience; not for safety-critical control" },
                                             { cat: "Consumer Hubs", model: "Generic Home Hubs", cond: "Only as isolated boundary devices; no core dependency" },
+                                            { cat: "IP Devices", model: "WiFi-based Devices", cond: "Isolated VLAN only; static IP assignments required" },
+                                            { cat: "Ecosystem", model: "Apple HomeKit", cond: "Secondary UI only; automation logic must remain in Vœrynth core" }
                                         ].map((row, idx) => (
                                             <tr key={idx} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                                                 <td className="py-6 pr-6 text-white/80">{row.cat}</td>
