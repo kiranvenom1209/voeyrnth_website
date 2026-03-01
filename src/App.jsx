@@ -102,53 +102,50 @@ export default function App() {
                     {mounted && <ReloadPrompt />}
                     <CacheBuster />
 
-                    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-                        <Routes location={location} key={location.pathname}>
-                            <Route path="/" element={getElement('/')} />
-                            <Route path="/de" element={<PageTransition><DeHome /></PageTransition>} />
-                            <Route path="/de/" element={<PageTransition><DeHome /></PageTransition>} />
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={getElement('/')} />
+                        <Route path="/de" element={<PageTransition><DeHome /></PageTransition>} />
+                        <Route path="/de/" element={<PageTransition><DeHome /></PageTransition>} />
 
-                            {/* German-specific pages — must be declared before the auto-mirror loop */}
-                            <Route path="/de/about" element={<PageTransition><DeAbout /></PageTransition>} />
-                            <Route path="/de/platform" element={<PageTransition><DePlatform /></PageTransition>} />
-                            <Route path="/de/solutions" element={<PageTransition><DeSolutions /></PageTransition>} />
-                            <Route path="/de/security" element={<PageTransition><DeSecurity /></PageTransition>} />
-                            <Route path="/de/pricing" element={<PageTransition><DePricing /></PageTransition>} />
-                            <Route path="/de/contact" element={<PageTransition><DeContact /></PageTransition>} />
-                            <Route path="/de/private-estates" element={<PageTransition><DePrivateEstates /></PageTransition>} />
-                            <Route path="/de/penthouses" element={<PageTransition><DePenthouses /></PageTransition>} />
-                            <Route path="/de/superyachts" element={<PageTransition><DeSuperyachts /></PageTransition>} />
-                            <Route path="/de/industrial-suites" element={<PageTransition><DeIndustrialSuites /></PageTransition>} />
-                            <Route path="/de/energy" element={<PageTransition><DeEnergy /></PageTransition>} />
-                            <Route path="/de/architecture" element={<PageTransition><DeArchitecture /></PageTransition>} />
-                            <Route path="/de/design" element={<PageTransition><DeDesign /></PageTransition>} />
-                            <Route path="/de/systeme" element={<PageTransition><DeSysteme /></PageTransition>} />
-                            <Route path="/de/os" element={<PageTransition><DeOS /></PageTransition>} />
-                            <Route path="/de/automations" element={<PageTransition><DeAutomations /></PageTransition>} />
-                            <Route path="/de/private-access" element={<PageTransition><DePrivateAccess /></PageTransition>} />
-                            <Route path="/de/data-sovereignty" element={<PageTransition><DeDataSovereignty /></PageTransition>} />
-                            <Route path="/de/process" element={<PageTransition><DeProcess /></PageTransition>} />
-                            <Route path="/de/specs" element={<PageTransition><DeSpecs /></PageTransition>} />
-                            <Route path="/de/hardware" element={<PageTransition><DeHardware /></PageTransition>} />
-                            <Route path="/de/protocols" element={<PageTransition><DeProtocols /></PageTransition>} />
-                            <Route path="/de/security/model" element={<PageTransition><DeSecurityModel /></PageTransition>} />
-                            <Route path="/de/pilot" element={<PageTransition><DePilot /></PageTransition>} />
-                            <Route path="/de/proof" element={<PageTransition><DeProofIndex /></PageTransition>} />
-                            <Route path="/de/proof/commissioning" element={<PageTransition><DeProofCommissioning /></PageTransition>} />
-                            <Route path="/de/proof/release-policy" element={<PageTransition><DeProofReleasePolicy /></PageTransition>} />
-                            <Route path="/de/proof/audit-log" element={<PageTransition><DeProofAuditLog /></PageTransition>} />
+                        {/* German-specific pages — must be declared before the auto-mirror loop */}
+                        <Route path="/de/about" element={<PageTransition><DeAbout /></PageTransition>} />
+                        <Route path="/de/platform" element={<PageTransition><DePlatform /></PageTransition>} />
+                        <Route path="/de/solutions" element={<PageTransition><DeSolutions /></PageTransition>} />
+                        <Route path="/de/security" element={<PageTransition><DeSecurity /></PageTransition>} />
+                        <Route path="/de/pricing" element={<PageTransition><DePricing /></PageTransition>} />
+                        <Route path="/de/contact" element={<PageTransition><DeContact /></PageTransition>} />
+                        <Route path="/de/private-estates" element={<PageTransition><DePrivateEstates /></PageTransition>} />
+                        <Route path="/de/penthouses" element={<PageTransition><DePenthouses /></PageTransition>} />
+                        <Route path="/de/superyachts" element={<PageTransition><DeSuperyachts /></PageTransition>} />
+                        <Route path="/de/industrial-suites" element={<PageTransition><DeIndustrialSuites /></PageTransition>} />
+                        <Route path="/de/energy" element={<PageTransition><DeEnergy /></PageTransition>} />
+                        <Route path="/de/architecture" element={<PageTransition><DeArchitecture /></PageTransition>} />
+                        <Route path="/de/design" element={<PageTransition><DeDesign /></PageTransition>} />
+                        <Route path="/de/systeme" element={<PageTransition><DeSysteme /></PageTransition>} />
+                        <Route path="/de/os" element={<PageTransition><DeOS /></PageTransition>} />
+                        <Route path="/de/automations" element={<PageTransition><DeAutomations /></PageTransition>} />
+                        <Route path="/de/private-access" element={<PageTransition><DePrivateAccess /></PageTransition>} />
+                        <Route path="/de/data-sovereignty" element={<PageTransition><DeDataSovereignty /></PageTransition>} />
+                        <Route path="/de/process" element={<PageTransition><DeProcess /></PageTransition>} />
+                        <Route path="/de/specs" element={<PageTransition><DeSpecs /></PageTransition>} />
+                        <Route path="/de/hardware" element={<PageTransition><DeHardware /></PageTransition>} />
+                        <Route path="/de/protocols" element={<PageTransition><DeProtocols /></PageTransition>} />
+                        <Route path="/de/security/model" element={<PageTransition><DeSecurityModel /></PageTransition>} />
+                        <Route path="/de/pilot" element={<PageTransition><DePilot /></PageTransition>} />
+                        <Route path="/de/proof" element={<PageTransition><DeProofIndex /></PageTransition>} />
+                        <Route path="/de/proof/commissioning" element={<PageTransition><DeProofCommissioning /></PageTransition>} />
+                        <Route path="/de/proof/release-policy" element={<PageTransition><DeProofReleasePolicy /></PageTransition>} />
+                        <Route path="/de/proof/audit-log" element={<PageTransition><DeProofAuditLog /></PageTransition>} />
 
-                            {Object.keys(routes).map(path => {
-                                if (path === '/' || path === '*') return null;
-                                const enRoute = <Route key={path} path={path} element={getElement(path)} />;
-                                // Mirror remaining EN routes under /de/* — German-specific pages above take precedence
-                                const deRoute = <Route key={`de-${path}`} path={`/de${path}`} element={getElement(path)} />;
-                                return [enRoute, deRoute];
-                            })}
-                            {/* 404 Route */}
-                            <Route path="*" element={getElement('*')} />
-                        </Routes>
-                    </AnimatePresence>
+                        {Object.keys(routes).map(path => {
+                            if (path === '/' || path === '*') return null;
+                            const enRoute = <Route key={path} path={path} element={getElement(path)} />;
+                            // Mirror remaining EN routes under /de/* — German-specific pages above take precedence
+                            const deRoute = <Route key={`de-${path}`} path={`/de${path}`} element={getElement(path)} />;
+                            return [enRoute, deRoute];
+                        })}
+                        <Route path="*" element={getElement('*')} />
+                    </Routes>
 
                     <Footer />
                 </div>
