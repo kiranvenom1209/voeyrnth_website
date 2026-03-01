@@ -41,9 +41,6 @@ export default defineConfig({
           /\.(png|jpg|jpeg|svg|webp|gif|txt|xml|json|webmanifest)$/
         ],
         // One-time purge: delete ALL old runtime caches on SW activation
-        additionalManifestEntries: [
-          { url: '/cache-bust-v2', revision: Date.now().toString() }
-        ],
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.startsWith('/assets/') || url.pathname.startsWith('/bimi/'),
