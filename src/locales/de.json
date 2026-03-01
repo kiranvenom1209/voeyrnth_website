@@ -1,0 +1,53 @@
+{
+    "home": {
+        "hero": {
+            "title": "Ihr Anwesen, durchdacht erhöht.",
+            "subtitle": "Vœrynth Système ist ein modulares Intelligenz-Framework, das entwickelt wurde, um komplexe Umgebungen mit Weitsicht, Kontinuität und Zurückhaltung zu steuern – von der Gebäudeautomation bis hin zu hochverfügbaren Kontrollsystemen.",
+            "request_demo": "PRIVATE DEMO ANFRAGEN",
+            "explore_platform": "PLATTFORM ERKUNDEN",
+            "no_hype": "Kein Hype. Kein Lärm. Nur Systeme, die nicht versagen, wenn es darauf ankommt."
+        },
+        "tags": {
+            "local_first": "Local-First",
+            "zero_cloud": "Zero-Cloud Optional",
+            "deterministic": "Deterministische Logik",
+            "adaptive": "Adaptive Intelligenz"
+        }
+    },
+    "nav": {
+        "platform": "PLATTFORM",
+        "solutions": "LÖSUNGEN",
+        "architecture": "ARCHITEKTUR",
+        "design": "DESIGN",
+        "security": "SICHERHEIT",
+        "about": "ÜBER UNS",
+        "pricing": "PREISE",
+        "invest": "Investieren",
+        "request_demo": "DEMO ANFRAGEN",
+        "switch_to_german": "Auf Deutsch wechseln",
+        "switch_to_english": "Auf Englisch wechseln"
+    },
+    "footer": {
+        "tagline": "Aus dem Haus Ayanthiara",
+        "copyright": "Alle Rechte vorbehalten.",
+        "links": {
+            "pricing": "Preise",
+            "architecture": "Architektur",
+            "commissioning": "Inbetriebnahme",
+            "hardware": "Hardware",
+            "request_demo": "Demo anfragen",
+            "audit": "Audit-Beispiel",
+            "security_model": "Sicherheitsmodell",
+            "pilot": "Pilot",
+            "llm": "LLM-Anweisungen"
+        }
+    },
+    "modal": {
+        "close": "Übertragung schließen"
+    },
+    "pwa": {
+        "update_available": "Neue Version verfügbar",
+        "refresh": "Aktualisieren",
+        "close": "Schließen"
+    }
+}

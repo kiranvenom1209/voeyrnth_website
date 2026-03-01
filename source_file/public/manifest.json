@@ -1,0 +1,16 @@
+{
+    "name": "Vœrynth Système",
+    "short_name": "Vœrynth",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#080808",
+    "theme_color": "#080808",
+    "description": "Estate Automation & Control Systems",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('./assets/fonts/KumbhSans-Latin.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    --font-kumbh: 'Kumbh Sans', sans-serif;
+  }
+
+  html {
+    background-color: #050505;
+    overscroll-behavior-y: none;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 175, 55, 0.3) transparent;
+  }
+
+  /* Webkit scrollbar — ultra-thin gold accent */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.25);
+    border-radius: 3px;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.5);
+  }
+
+  body {
+    @apply bg-[#050505] text-white antialiased;
+    background-color: #050505;
+    background-image: linear-gradient(135deg, #0C0C0C 0%, #0A0A0A 50%, #080808 100%);
+    background-attachment: fixed;
+    font-family: var(--font-kumbh);
+    min-height: 100dvh;
+    overscroll-behavior-y: none;
+  }
+}
+
+
+
+@layer utilities {
+  .mask-gradient-x {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}

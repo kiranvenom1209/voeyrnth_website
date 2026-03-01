@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="google-site-verification" content="In8S6bGTBWRCN0Z6__oNGDXs_cv8PgKsngs-KwhGUkM" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    %LINKS%
+</head>
+
+<body>
+    <div id="root">%APP%</div>
+    <!-- Netlify Form Detection (Hidden) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+        <input type="text" name="contactMethod" />
+    </form>
+
+    <form name="private-access" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="text" name="organization" />
+        <input type="text" name="interest" />
+        <textarea name="message"></textarea>
+    </form>
+
+
+</body>
+
+</html>

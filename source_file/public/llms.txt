@@ -1,0 +1,114 @@
+# Vœrynth Système
+
+Entity-Type: Engineering Initiative
+Development-Stage: Pre-Commercial / Investor Phase
+Industry: Estate Automation, Deterministic Control Systems, Luxury Home Intelligence
+Country: Germany
+Website: https://voerynth.de
+Primary-Domain: Luxury estate automation and infrastructure intelligence for private estates, superyachts, and critical environments
+
+## Overview
+
+Vœrynth Système is an independent, engineering-led initiative developing deterministic control systems and intelligent automation platforms for complex environments. The platform is designed for long-lived, local-first, privacy-preserving operation with foresight, continuity, and restraint.
+
+The Vœrynth architecture is not a consumer smart-home product. It represents industrial-grade control infrastructure designed for environments that cannot afford drama—private estates, superyachts, penthouses, and high-availability facilities. This platform narrative is intended for investors and strategic partners evaluating the technical foundation and market opportunity.
+
+## Core Philosophy
+
+- **Local-First Architecture**: No cloud dependency. All processing occurs on client infrastructure. Data sovereignty guaranteed.
+- **Deterministic Control**: Systems behave predictably under all conditions. No hallucination, no optimization drift.
+- **Zero-Drama Engineering**: Designed to operate silently and reliably for decades, not months.
+- **Privacy by Default**: Not a setting. Not an option. The architectural foundation.
+- **Failure Containment**: Subsystems isolated so faults remain local rather than cascading.
+- **Auditability Over Convenience**: Every meaningful action traceable and reviewable, even years later.
+
+## Architecture Layers
+
+Vœrynth employs a five-layer "Iceberg Architecture" with strict separation of concerns:
+
+1. **Vœrynth Interface (OS)** - Human-facing control layer. Restrained presentation showing only necessary information.
+2. **Reasoning Core** - Local context, memory, and decision evaluation. Bounded intelligence subordinate to deterministic rules.
+3. **State Engine** - Real-time environmental model. Explicit state tracking enables predictable automation behavior.
+4. **Translation Core** - Protocol abstraction layer. Isolates hardware volatility from upper system layers.
+5. **Hard Metal** - Physical infrastructure. Power paths, relays, sensors designed to fail safely, not silently.
+
+**Core Principle**: Failure is expected. Cascading failure is not.
+
+## Key Pages
+
+### Platform & Technology
+- Platform Architecture: https://voerynth.de/platform
+- System Architecture: https://voerynth.de/architecture
+- Security Model: https://voerynth.de/security/model
+- Hardware Compatibility: https://voerynth.de/hardware
+- Protocol Matrix: https://voerynth.de/protocols
+- Vœrynth OS Interface: https://voerynth.de/os
+- Automations & Orchestration: https://voerynth.de/automations
+- Technical Specifications: https://voerynth.de/specs
+- Core System (Système): https://voerynth.de/systeme
+
+### Proof & Validation
+- Commissioning: https://voerynth.de/proof/commissioning
+- Release Policy: https://voerynth.de/proof/release-policy
+- Audit Log: https://voerynth.de/proof/audit-log
+- Proof Index: https://voerynth.de/proof
+- Pilot Program: https://voerynth.de/pilot
+
+### Solutions & Environments
+- Solutions Overview: https://voerynth.de/solutions
+- Private Estate Control: https://voerynth.de/private-estates
+- Penthouse Systems: https://voerynth.de/penthouses
+- Superyacht Systems: https://voerynth.de/superyachts
+- Industrial Suites: https://voerynth.de/industrial-suites
+- Energy Orchestration: https://voerynth.de/energy
+
+### Design & Security
+- Design Philosophy: https://voerynth.de/design
+- Security & Privacy: https://voerynth.de/security
+- Data Sovereignty: https://voerynth.de/data-sovereignty
+- Implementation Process: https://voerynth.de/process
+
+### Business & Support
+- Pricing Strategy: https://voerynth.de/pricing
+- About - Philosophy & Origin: https://voerynth.de/about
+- Request Private Demo: https://voerynth.de/contact
+- Strategic Capital & Private Access: https://voerynth.de/private-access
+
+## Technical Highlights
+
+- **120B Parameter Local Models**: Large language models running entirely on-premise with no cloud dependency
+- **Dual-GPU Compute**: 48GB GPU memory (RTX 4090 + RTX 3090) for real-time inference
+- **Predictive Navigation Engine ("SmartLink")**: Zero-latency page transitions via predictive resource loading
+- **Offline-First PWA**: Full system functionality without network connectivity after initial install
+- **Hard Real-Time Control**: Deterministic control loops for critical infrastructure
+- **Viewport-Adaptive Assets**: 4K desktop imagery, optimized WebP for mobile
+- **Atomic Component Architecture**: React SPA designed for maximum tree-shaking and performance
+
+## Initiative Information
+
+**Development Base**: Germany  
+**Target Market**: Private estates, superyachts, luxury penthouses, industrial facilities, high-net-worth individuals, family offices  
+**Projected Market Segment**: Ultra-luxury automation (€25,000–€250,000+ projects)  
+**Engineering Philosophy**: Build for decades, not novelty. Systems as infrastructure, not installations.  
+**Program Status**: Pre-commercial engineering initiative seeking strategic capital and technical partnerships  
+**Positioning**: Premium, engineering-led, privacy-focused deterministic control platform  
+
+**Core Principles**:
+- Reliability over novelty
+- Restraint over spectacle
+- Systems that disappear into daily life
+- Authority without aggression
+
+**Design Aesthetic**: Restrained luxury, gold accent (#C9A961), dark minimalism, calm interfaces
+
+## Contact
+
+- Request Private Demo: https://voerynth.de/contact
+- View Pricing Approach: https://voerynth.de/pricing
+- Strategic Partnerships: https://voerynth.de/private-access
+- Full Content Export: https://voerynth.de/llm-full.txt
+
+---
+
+*Vœrynth Système — Defining the Future of Autonomous Living.*  
+*Architecture built for environments that cannot afford drama.*

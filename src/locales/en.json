@@ -1,0 +1,53 @@
+{
+    "home": {
+        "hero": {
+            "title": "Your Estate, Thoughtfully Elevated.",
+            "subtitle": "Vœrynth Système is a modular intelligence framework designed to govern complex environments with foresight, continuity, and restraint - from estate automation to high-availability control systems.",
+            "request_demo": "REQUEST PRIVATE DEMO",
+            "explore_platform": "EXPLORE THE PLATFORM",
+            "no_hype": "No hype. No noise. Just systems that don't fail when it matters."
+        },
+        "tags": {
+            "local_first": "Local-First",
+            "zero_cloud": "Zero-Cloud Optional",
+            "deterministic": "Deterministic Logic",
+            "adaptive": "Adaptive Intelligence"
+        }
+    },
+    "nav": {
+        "platform": "PLATFORM",
+        "solutions": "SOLUTIONS",
+        "architecture": "ARCHITECTURE",
+        "design": "DESIGN",
+        "security": "SECURITY",
+        "about": "ABOUT",
+        "pricing": "PRICING",
+        "invest": "Invest",
+        "request_demo": "REQUEST PRIVATE DEMO",
+        "switch_to_german": "Switch to German",
+        "switch_to_english": "Switch to English"
+    },
+    "footer": {
+        "tagline": "From the House of Ayanthiara",
+        "copyright": "All Rights Reserved.",
+        "links": {
+            "pricing": "Pricing",
+            "architecture": "Architecture",
+            "commissioning": "Commissioning",
+            "hardware": "Hardware",
+            "request_demo": "Request Demo",
+            "audit": "Audit Example",
+            "security_model": "Security Model",
+            "pilot": "Pilot",
+            "llm": "LLM Instructions"
+        }
+    },
+    "modal": {
+        "close": "Close Transmission"
+    },
+    "pwa": {
+        "update_available": "New version available",
+        "refresh": "Refresh",
+        "close": "Close"
+    }
+}

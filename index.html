@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="google-site-verification" content="In8S6bGTBWRCN0Z6__oNGDXs_cv8PgKsngs-KwhGUkM" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="/src/assets/fonts/KumbhSans-Latin.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div id="root"><!--app-html--></div>
+  <!-- Netlify Form Detection (Hidden) -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="text" name="company" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <input type="text" name="contactMethod" />
+  </form>
+
+  <form name="private-access" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="text" name="organization" />
+    <input type="text" name="interest" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
