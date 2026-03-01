@@ -1,6 +1,5 @@
-import React, { lazy } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState } from 'react';
+import { Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import Navigation from './components/layout/Navigation';
@@ -75,10 +74,18 @@ function LanguageSync() {
 export default function App() {
     const [mounted, setMounted] = useState(false);
     const location = useLocation();
+    const navType = useNavigationType();
 
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    const handleExitComplete = () => {
+        // Only scroll to top on new navigations. On POP (back/forward), let the browser preserve scroll position.
+        if (navType !== 'POP') {
+            window.scrollTo(0, 0);
+        }
+    };
 
     return (
         <LanguageTransitionProvider>
@@ -95,7 +102,7 @@ export default function App() {
                     {mounted && <ReloadPrompt />}
                     <CacheBuster />
 
-                    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+                    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
                         <Routes location={location} key={location.pathname}>
                             <Route path="/" element={getElement('/')} />
                             <Route path="/de" element={<PageTransition><DeHome /></PageTransition>} />
