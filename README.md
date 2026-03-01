@@ -99,10 +99,9 @@ To ensure fluid 60FPS scrolling and zero frame-drops even on older Intel hardwar
 - Replaced deep blurs with pre-calculated `radial-gradient` meshes and `mix-blend-mode: luminosity` overlays. This forces the browser to offload the blending math directly to the GPU hardware, reducing CPU load by >60%.
 - Eliminated all chained multi-color CSS filters (`saturate`, `sepia`, etc.) on background Hero assets and UI cards, moving image processing to build-time or lightweight mix-blends.
 
-### 2. Animation Engine Tree-Shaking
-- The massive ~150KB `framer-motion` animation engine was stripped out of the critical rendering path.
-- By implementing `<LazyMotion features={domAnimation}>` and using the `<m>` projection node pattern, the React Router boots instantly and streams the animation physics engine in the background, massively shrinking the initial JS bundle payload.
-- All non-essential stagger delays were removed, and global transition times were tightened from 1.2s to a punchy 0.2s for maximum perceived responsiveness. The full-screen language curtain sweep was retuned with a custom decelerating cubic-bezier curve (`[0.76, 0, 0.24, 1]`) for high-end cinematic polish.
+### 2. Instant Native-Like Navigation
+- The massive `framer-motion` animation engine was stripped out of the critical rendering path for page routing.
+- By removing artificial layout transition delays entirely, the React Router boots and swaps views instantaneously, providing a hyper-responsive, "snappy" navigation feel reminiscent of raw native performance.
 
 ### 3. Font Preloading & Paint Stability
 - Injected strict `<link rel="preload" as="font"...>` commands into the raw `index.html` structure.
@@ -113,17 +112,15 @@ To ensure fluid 60FPS scrolling and zero frame-drops even on older Intel hardwar
 
 ## 🧠 9. Cutting-Edge UX & Routing Architecture (March 2026)
 
-To deliver a truly native, app-like feel on the web, we completely re-engineered the routing and animation state machines:
+To deliver a truly native, app-like feel on the web, we completely re-engineered the routing state machines:
 
-### 1. Smart Scroll Restoration
-- Built a custom React Router `useNavigationType()` interceptor into the Framer Motion `AnimatePresence` exit handler.
-- If a user navigates naturally (`PUSH`), the viewport smoothly scrolls to the top of the incoming page.
+### 1. Smart Scroll Restoration Engine
+- Built a custom `<ScrollHandler />` interceptor that listens seamlessly to React Router's `useNavigationType()`.
+- If a user navigates naturally (`PUSH`), the viewport instantly snaps to `(0, 0)` at the top of the incoming page.
 - If a user uses the browser's Back/Forward history (`POP`), the engine skips the forced scroll, allowing the native browser APIs to instantaneously restore the exact `(x, y)` scroll depth the user was at previously, right alongside the specific CTA or card they clicked.
 
-### 2. Cinematic Route Physics & Safari Acceleration
-- The standard page transitions were re-architected with a luxurious `0.6s` animation duration, gliding on a mathematically precise cubic-bezier ease-out curve (`[0.22, 1, 0.36, 1]`).
-- Eliminated choppy SVG blur filters on exit and strictly injected `will-change: opacity, transform` hints onto the routing wrappers. This forces modern browsers to pre-allocate GPU memory for the incoming DOM tree before the animation even starts, guaranteeing absolutely flawless 60FPS precision.
-- Implemented specific compositing hints (`translate3d(0,0,0)`) on fixed background elements to bypass Safari's notorious WebKit layout thrashing.
+### 2. Safari Rendering Acceleration
+- Implemented specific compositing hints (`translate3d(0,0,0)`) on fixed background elements to bypass Safari's notorious WebKit layout thrashing when changing DOM structures without transitions.
 
 ### 3. PWA Ecosystem Stability
 - Fixed critical Service Worker Workbox installation halts to guarantee persistent offline capability.
