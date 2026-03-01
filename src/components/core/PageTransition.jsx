@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { m } from 'framer-motion';
 import { useNavigationType } from 'react-router-dom';
 
+let globalHasMounted = false;
+
 const PageTransition = ({ children }) => {
     const navType = useNavigationType();
-    const isPop = navType === 'POP';
+
+    // On the very first load, navType is 'POP' but we want the default entrance animation.
+    // So we only disable animation on POP if the app has already mounted.
+    const isPop = navType === 'POP' && globalHasMounted;
+
+    useEffect(() => {
+        globalHasMounted = true;
+    }, []);
 
     return (
         <m.div
