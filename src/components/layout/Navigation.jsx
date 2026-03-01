@@ -80,7 +80,10 @@ export default function Navigation() {
 
     return (
         <>
-            <nav className={`fixed w-full z-50 transition-all duration-200 pointer-events-none ${scrolled ? 'bg-[#0A0A0A]/98 backdrop-blur-md py-4' : 'py-6 md:py-8 bg-transparent'}`}>
+            <nav
+                className={`fixed w-full z-50 transition-all duration-200 pointer-events-none ${scrolled ? 'bg-[#0A0A0A]/98 backdrop-blur-md py-4' : 'py-6 md:py-8 bg-transparent'}`}
+                style={{ WebkitTransform: 'translate3d(0,0,0)', transform: 'translate3d(0,0,0)' }}
+            >
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                     <SmartLink to={getLocalizedPath("/")} className="flex items-center gap-2 select-none z-50 pointer-events-auto">
                         <img
