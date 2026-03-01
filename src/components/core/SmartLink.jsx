@@ -10,11 +10,11 @@ export default function SmartLink({ to, children, ...props }) {
         const route = routes[to];
         if (route) {
             // 1. Prefetch Code (JS Chunk)
-            // Calling the component import triggers the network request
-            const componentPromise = route.component();
-
-            // Optional: You could cache the promise if you wanted to prevent multiple calls, 
-            // but the browser's module loader handles deduping requests automatically.
+            // Note: Currently in routes.js, English pages are imported synchronously, 
+            // so they are already in the main bundle. Calling route.component() directly
+            // throws an Invalid Hook Call error because it executes a functional component
+            // outside of the React render cycle. If you ever switch to lazy() for English pages,
+            // you'd prefetch like this: if (route.preloadChunk) route.preloadChunk()
 
             // 2. Prefetch Assets (Images)
             if (route.preload && route.preload.length > 0) {
