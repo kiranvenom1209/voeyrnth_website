@@ -54,7 +54,7 @@ export default function LanguageTransition() {
 
             {/* Dark backdrop — always present while visible */}
             <m.div
-                className="absolute inset-0 bg-[#050505]"
+                className="fixed inset-0 min-h-[100dvh] bg-[#050505]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: exiting ? 0 : 1 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -62,7 +62,7 @@ export default function LanguageTransition() {
 
             {/* Sliding curtain panel */}
             <m.div
-                className="absolute inset-0 bg-[#080808] flex items-center justify-center"
+                className="fixed inset-0 min-h-[100dvh] bg-[#080808] flex items-center justify-center"
                 initial={{ x: '-100%' }}
                 animate={{ x: exiting ? '100%' : '0%' }}
                 transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
