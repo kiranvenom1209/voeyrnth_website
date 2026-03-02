@@ -1,1 +1,12 @@
-/* /404.html 404
+# Pass-through rules for static bot/crawlable files (must come BEFORE the SPA catch-all)
+/robots.txt        /robots.txt        200
+/sitemap.xml       /sitemap.xml       200
+/llms.txt          /llms.txt          200
+/llm-full.txt      /llm-full.txt      200
+/manifest.json     /manifest.json     200
+/manifest.webmanifest /manifest.webmanifest 200
+/sw.js             /sw.js             200
+/favicon.svg       /favicon.svg       200
+
+# SPA catch-all — serves index.html for all React Router routes
+/* /index.html 200
