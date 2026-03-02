@@ -78,7 +78,7 @@ export default function AyanthiaraChitrakoot() {
             title: "3. Security & Escalation",
             caption: "The dedicated security control deck. Beyond perimeter defense, it tracks the user's live global position, extending Jarvis-level protection far beyond the property line.",
             uses: [
-                "Live GPS tracking: If health telemetry indicates danger outside the home, auto-sends current coordinates to emergency contacts and local services.",
+                "Live GPS tracking: If health telemetry indicates danger outside the home, auto-sends current coordinates to emergency contacts.",
                 "Arming the system instantly upon leaving (if not auto-armed by presence)",
                 "Viewing live RTSP camera feeds (Entrance, Living Room)",
                 "Checking the status and battery level of the Matter-enabled main lock"
@@ -104,7 +104,7 @@ export default function AyanthiaraChitrakoot() {
             uses: [
                 "Continuous monitoring of vital signs (resting HR, SpO₂, blood pressure averages)",
                 "Medical Escalation Loop: If BP drops critically, automatically flashes house lights and broadcasts TTS instructions (e.g., 'Take salt water immediately').",
-                "Non-responsive Protocol: Prompts for a physical/audio confirmation. If failed, automatically alerts friends and emergency services.",
+                "Non-responsive Protocol: Prompts for a physical/audio confirmation. If failed, automatically alerts designated emergency contacts. Escalation logic is configurable per client jurisdiction.",
                 "Transforms standard phones and smartwatches into a continuous layer of 'Ironman suit' style protection."
             ]
         },
@@ -137,7 +137,7 @@ export default function AyanthiaraChitrakoot() {
                         "headline": "Ayanthiara Chitrakoot — Live Vœrynth OS Deployment",
                         "description": "A real multi-level estate running Vœrynth Système live. Local-first automation, zero-cloud logic, presence-aware control, and deterministic fallbacks deployed in a luxury environment.",
                         "image": "https://voerynth.de/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png",
-                        "url": "https://voerynth.de/case-studies/ayanthiara-chitrakoot",
+                        "url": "https://voerynth.de/case-studies/ayanthiara-chitrakoot/",
                         "author": {
                             "@type": "Organization",
                             "name": "Vœrynth Système",
@@ -258,6 +258,30 @@ export default function AyanthiaraChitrakoot() {
                     </m.div>
                 </div>
             </section>
+
+            {/* UPGRADE A: METRICS STRIP */}
+            <Section className="bg-[#050505] border-y border-white/5 py-12">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
+                        <div className="px-4">
+                            <h4 className="text-3xl font-light text-[#D4AF37] mb-2">40+</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Automations</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-3xl font-light text-[#D4AF37] mb-2">25+</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Scenes</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">FP2 + Camera</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Presence Sensors</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">Zigbee / Matter / LAN</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Control Protocols</p>
+                        </div>
+                    </div>
+                </div>
+            </Section>
 
             {/* B: THE BRIEF */}
             <Section className="bg-[#050505] border-y border-white/5 py-24">
@@ -456,7 +480,7 @@ export default function AyanthiaraChitrakoot() {
 
                 <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
                     <h2 className="text-3xl lg:text-4xl font-light text-white/95 leading-relaxed mb-6">
-                        Why It Feels Like JARVIS in Malibu
+                        Why it feels like a private butler — not a gadget.
                     </h2>
                     <p className="text-white/60 font-light text-lg max-w-3xl mx-auto leading-relaxed mb-16">
                         This is not just a standard Home Assistant installation. Home Assistant merely acts as the <strong className="text-[#C9A961] font-normal">State Engine</strong> and <strong className="text-[#C9A961] font-normal">Translation Core</strong>. The true intelligence and feel of Vœrynth Système operates primarily on our proprietary higher-level pillars: the <strong className="text-[#C9A961] font-normal">Reasoning Core</strong> and the <strong className="text-[#C9A961] font-normal">Vœrynth Interface</strong>.
@@ -622,6 +646,27 @@ export default function AyanthiaraChitrakoot() {
                                     <li>• Security logic is stateful + persistent while armed</li>
                                 </ul>
                             </div>
+                        </div>
+
+                        {/* UPGRADE B: BOUNDED INTELLIGENCE POLICY */}
+                        <div className="mt-8 bg-[#0A0A0A] border border-[#D4AF37]/30 p-8 rounded-lg">
+                            <h4 className="text-[#C9A961] text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
+                                <ShieldAlert size={16} /> Bounded Intelligence Policy
+                            </h4>
+                            <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+                                "How do you prevent hallucination executing actions?"
+                            </p>
+                            <ul className="space-y-2 text-sm font-light text-white/60">
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> AI never controls devices directly.
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> It proposes actions → deterministic policy validates → HA service call executes.
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> Every critical action is logged and reversible.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -822,6 +867,35 @@ action:
 mode: single`}
                                 />
                             </div>
+
+                            {/* UPGRADE D: FLOORPLAN OVERLAY LOGIC */}
+                            <div>
+                                <h4 className="text-white/80 font-medium mb-4 flex items-center gap-3">
+                                    <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-[#C9A961] font-mono">6</span>
+                                    Dynamic Floorplan Overlay Logic (CSS Filter mapping)
+                                </h4>
+                                <CodeSnippet
+                                    title="Pseudocode / Config Template"
+                                    code={`IF light is ON → show glow overlay
+opacity = f(brightness)
+filter = f(hue,sat) with warm-tone protection
+
+// Implementation (custom:html-template-card logic):
+const state = states['light.living_room'].state;
+const brightness = states['light.living_room'].attributes.brightness || 0;
+
+if (state === 'on') {
+    display = 'block';
+    opacity = map(brightness, 0, 255, 0.2, 0.9); // Scale visually
+    
+    // Convert xy_color or hs_color to CSS valid filter
+    // fallback to warm white if not provided
+    filter = computeCSSFilter(attributes.hs_color);
+} else {
+    display = 'none';
+}`}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -923,6 +997,21 @@ mode: single`}
                             </div>
                         ))}
                     </div>
+                </div>
+            </Section>
+
+            {/* UPGRADE E: HUMAN OUTCOME BLOCK */}
+            <Section className="py-24 bg-[#0A0A0A] border-t border-white/5">
+                <div className="max-w-3xl mx-auto text-center px-6 border-l-2 border-[#D4AF37] pl-8 py-4">
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic mb-4">
+                        “Daily life runs itself.
+                    </p>
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic mb-4">
+                        The panel is for refinement, not survival.
+                    </p>
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic">
+                        The house stays calm even when the network doesn’t.”
+                    </p>
                 </div>
             </Section>
 

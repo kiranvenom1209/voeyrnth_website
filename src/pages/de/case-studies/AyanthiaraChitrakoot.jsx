@@ -78,7 +78,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
             title: "3. Sicherheit & Eskalation",
             caption: "Das dedizierte Sicherheits-Kontrolldeck. Neben dem Perimeterschutz verfolgt es die globale Live-Position des Nutzers und erweitert den Jarvis-Level-Schutz weit über die Grundstücksgrenze hinaus.",
             uses: [
-                "Live-GPS-Tracking: Wenn Telemetriedaten auf Gefahr außerhalb des Hauses hindeuten, werden aktuelle Koordinaten automatisch an Notfallkontakte und lokale Dienste gesendet.",
+                "Live-GPS-Tracking: Wenn Telemetriedaten auf Gefahr außerhalb des Hauses hindeuten, werden aktuelle Koordinaten automatisch an festgelegte Notfallkontakte gesendet.",
                 "Sofortiges Scharfschalten des Systems beim Verlassen (falls nicht durch Präsenz geschehen)",
                 "Anzeigen von Live-RTSP-Kamera-Feeds (Eingang, Wohnzimmer)",
                 "Überprüfen von Status und Batteriestand des Matter-fähigen Hauptschlosses"
@@ -104,7 +104,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
             uses: [
                 "Kontinuierliche Überwachung von Vitalwerten (Ruhepuls, SpO₂, Blutdruck)",
                 "Medizinische Eskalationsschleife: Fällt der Blutdruck kritisch ab, blinken die Lichter und TTS-Anweisungen ertönen (z.B. „Sofort Salzwasser trinken“).",
-                "Non-Responsive-Protokoll: Fordert visuelle/akustische Bestätigung. Bei Nichtreaktion werden automatisch Freunde und Rettungsdienste alarmiert.",
+                "Non-Responsive-Protokoll: Fordert visuelle/akustische Bestätigung. Bei Nichtreaktion werden automatisch festgelegte Notfallkontakte alarmiert. Die Eskalationslogik ist je nach Zuständigkeitsbereich des Kunden konfigurierbar.",
                 "Verwandelt handelsübliche Handys und Smartwatches in eine kontinuierliche Schutzschicht – wie ein „Ironman-Anzug“."
             ]
         },
@@ -128,7 +128,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                 title="Ayanthiara Chitrakoot — Live Vœrynth OS Einsatz | Fallstudie"
                 description="Ein echtes mehrstöckiges Anwesen mit Vœrynth Système. Local-First-Automatisierung, Zero-Cloud-Logik und deterministische Fallback-Systeme in einer echten Luxusumgebung."
                 keywords="Fallstudie, Live-Einsatz, ayanthiara chitrakoot, Anwesen Automatisierung, neural interface os, lokale KI, Home Assistant, Vœrynth OS, Smart Home Fallstudie, Luxus Automatisierung"
-                canonical="/de/case-studies/ayanthiara-chitrakoot"
+                canonical="/de/case-studies/ayanthiara-chitrakoot/"
                 ogImage="/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png"
             />
 
@@ -229,6 +229,30 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                     </m.div>
                 </div>
             </section>
+
+            {/* UPGRADE A: METRICS STRIP */}
+            <Section className="bg-[#050505] border-y border-white/5 py-12">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
+                        <div className="px-4">
+                            <h4 className="text-3xl font-light text-[#D4AF37] mb-2">40+</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Automatisierungen</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-3xl font-light text-[#D4AF37] mb-2">25+</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Szenen</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">FP2 + Kamera</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Präsenzsensoren</p>
+                        </div>
+                        <div className="px-4">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">Zigbee / Matter / LAN</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Steuerungsprotokolle</p>
+                        </div>
+                    </div>
+                </div>
+            </Section>
 
             {/* B: THE BRIEF */}
             <Section className="bg-[#050505] border-y border-white/5 py-24">
@@ -427,7 +451,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
 
                 <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
                     <h2 className="text-3xl lg:text-4xl font-light text-white/95 leading-relaxed mb-6">
-                        Warum es sich anfühlt wie JARVIS in Malibu
+                        Warum es sich wie ein privater Butler anfühlt — nicht wie ein Gadget.
                     </h2>
                     <p className="text-white/60 font-light text-lg max-w-3xl mx-auto leading-relaxed mb-16">
                         Dies ist nicht einfach nur eine Standard-Installation von Home Assistant. Home Assistant fungiert lediglich als <strong className="text-[#C9A961] font-normal">State Engine</strong> und <strong className="text-[#C9A961] font-normal">Translation Core</strong> (Hardware-Abstraktionsschicht). Die wahre Intelligenz von Vœrynth Système operiert primär auf unseren proprietären, übergeordneten Säulen: dem <strong className="text-[#C9A961] font-normal">Reasoning Core</strong> und dem <strong className="text-[#C9A961] font-normal">Vœrynth Interface</strong>.
@@ -593,6 +617,27 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                     <li>• Sicherheitslogik ist zustandsbehaftet + persistent, solange scharfgeschaltet</li>
                                 </ul>
                             </div>
+                        </div>
+
+                        {/* UPGRADE B: BOUNDED INTELLIGENCE POLICY */}
+                        <div className="mt-8 bg-[#0A0A0A] border border-[#D4AF37]/30 p-8 rounded-lg">
+                            <h4 className="text-[#C9A961] text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
+                                <ShieldAlert size={16} /> Bounded Intelligence Richtlinie
+                            </h4>
+                            <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+                                „Wie verhindern Sie, dass KI versehentlich falsche Aktionen ausführt?“
+                            </p>
+                            <ul className="space-y-2 text-sm font-light text-white/60">
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> KI steuert niemals Geräte direkt.
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> Sie schlägt Aktionen vor → deterministische Richtlinien validieren sie → ein HA-Dienstaufruf führt sie aus.
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961]">—</span> Jede kritische Aktion wird protokolliert und ist umkehrbar.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -793,6 +838,35 @@ action:
 mode: single`}
                                 />
                             </div>
+
+                            {/* UPGRADE D: FLOORPLAN OVERLAY LOGIC */}
+                            <div>
+                                <h4 className="text-white/80 font-medium mb-4 flex items-center gap-3">
+                                    <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-[#C9A961] font-mono">6</span>
+                                    Dynamische Grundriss-Overlay-Logik (CSS Filter)
+                                </h4>
+                                <CodeSnippet
+                                    title="Pseudocode / Config Template"
+                                    code={`IF light is ON → show glow overlay
+opacity = f(brightness)
+filter = f(hue,sat) with warm-tone protection
+
+// Implementation (custom:html-template-card logic):
+const state = states['light.living_room'].state;
+const brightness = states['light.living_room'].attributes.brightness || 0;
+
+if (state === 'on') {
+    display = 'block';
+    opacity = map(brightness, 0, 255, 0.2, 0.9); // Scale visually
+    
+    // Convert xy_color or hs_color to CSS valid filter
+    // fallback to warm white if not provided
+    filter = computeCSSFilter(attributes.hs_color);
+} else {
+    display = 'none';
+}`}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -894,6 +968,21 @@ mode: single`}
                             </div>
                         ))}
                     </div>
+                </div>
+            </Section>
+
+            {/* UPGRADE E: HUMAN OUTCOME BLOCK */}
+            <Section className="py-24 bg-[#0A0A0A] border-t border-white/5">
+                <div className="max-w-3xl mx-auto text-center px-6 border-l-2 border-[#D4AF37] pl-8 py-4">
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic mb-4">
+                        „Der Alltag erledigt sich von selbst.
+                    </p>
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic mb-4">
+                        Das Panel ist zur Verfeinerung da, nicht zum Überleben.
+                    </p>
+                    <p className="text-2xl font-light text-white/90 leading-relaxed italic">
+                        Das Haus bleibt ruhig, auch wenn das Netzwerk ausfällt.“
+                    </p>
                 </div>
             </Section>
 
