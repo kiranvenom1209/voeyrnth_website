@@ -100,18 +100,19 @@ export default function App() {
     return (
         <LanguageTransitionProvider>
             <LazyMotion features={domAnimation}>
+                {/* Fixed overlays must live OUTSIDE PullToRefresh to avoid transform breaking position:fixed */}
+                <Navigation />
+                <LanguageModal />
+                <LanguageTransition />
+                {mounted && <ReloadPrompt />}
+
                 <PullToRefresh>
                     <div className="min-h-[100dvh] bg-gradient-to-br from-[#0C0C0C] via-[#0A0A0A] to-[#080808] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] overflow-x-hidden font-sans relative">
                         {/* Warm ambient glows removed due to banding issues without a noise filter */}
                         <div className="fixed inset-0 pointer-events-none z-0" />
 
-                        {/* Noise Overlay removed per user request */}
                         <ScrollHandler />
-                        <Navigation />
                         <LanguageSync />
-                        <LanguageModal />
-                        <LanguageTransition />
-                        {mounted && <ReloadPrompt />}
                         <CacheBuster />
 
                         <Routes location={location} key={location.pathname}>
