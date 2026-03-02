@@ -148,12 +148,12 @@ export default function OS() {
                         </m.div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 relative h-[500px] lg:h-[600px] flex justify-center items-center">
+                    <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] lg:h-[600px] flex justify-center lg:justify-end items-center mt-12 lg:mt-0">
                         <m.div
                             initial={{ opacity: 0, scale: 0.9, x: 50 }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="absolute z-10 right-[10%] lg:right-0 w-[400px] lg:w-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+                            className="absolute z-10 right-0 w-[85%] sm:w-[75%] lg:w-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
                         >
                             <img src="/assets/os/tablet/screencapture-192-168-153-1-5173-2026-03-02-11_28_48.png" alt="Tablet Interface" className="w-full h-auto" />
                         </m.div>
@@ -162,9 +162,9 @@ export default function OS() {
                             initial={{ opacity: 0, scale: 0.9, y: 50 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="absolute z-20 left-[10%] lg:-left-12 bottom-[10%] lg:bottom-0 w-[200px] lg:w-[250px] rounded-[2rem] overflow-hidden border-[6px] border-[#161616] shadow-2xl bg-black"
+                            className="absolute z-20 left-4 sm:left-[10%] lg:-left-12 bottom-0 w-[40%] sm:w-[35%] lg:w-[250px] min-w-[150px] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden border-[4px] lg:border-[6px] border-[#161616] shadow-2xl bg-black"
                         >
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#161616] rounded-b-xl z-20"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 lg:w-20 h-4 lg:h-5 bg-[#161616] rounded-b-lg lg:rounded-b-xl z-20"></div>
                             <img src="/assets/os/mobile/Screenshot_20260302_111931_Voerynth OS.jpg" alt="Mobile Interface" className="w-full h-auto relative z-10" />
                         </m.div>
                     </div>

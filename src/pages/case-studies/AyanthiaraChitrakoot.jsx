@@ -239,16 +239,16 @@ export default function AyanthiaraChitrakoot() {
                         transition={{ duration: 0.4, delay: 0.1 }}
                         className="relative"
                     >
-                        <div className="relative rounded-lg border border-white/10 bg-[#050505] p-2 shadow-2xl shadow-black group cursor-pointer" onClick={() => openLightbox("/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png", "Live View floorplan + Light Controls", "Interactive floorplan overlaid directly with entity states.")}>
-                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/5 to-transparent rounded-lg pointer-events-none" />
-                            <div className="overflow-hidden rounded border border-white/5 bg-[#000] relative">
+                        <div className="relative rounded-xl border border-white/5 bg-[#050505] p-1.5 shadow-2xl shadow-black group cursor-pointer" onClick={() => openLightbox("/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png", "Live View floorplan + Light Controls", "Interactive floorplan overlaid directly with entity states.")}>
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/5 to-transparent rounded-xl pointer-events-none" />
+                            <div className="overflow-hidden rounded-lg bg-[#050505] relative shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
                                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-[2px]">
                                     <span className="px-4 py-2 border border-white/20 bg-black/50 text-white/90 tracking-widest text-xs rounded">EXPAND LIVE VIEW</span>
                                 </div>
                                 <img
                                     src="/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png"
                                     alt="Live View floorplan + Light Controls"
-                                    className="w-full h-auto object-cover opacity-90 transition-all duration-500 scale-[1.01] group-hover:scale-100"
+                                    className="w-full h-auto object-cover opacity-90 transition-all duration-500 scale-[1.01] group-hover:scale-100 rounded-lg"
                                 />
                             </div>
                         </div>
@@ -433,8 +433,8 @@ export default function AyanthiaraChitrakoot() {
                             <div key={idx} className={`flex flex-col gap-12 lg:gap-20 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                                 {/* Image Side */}
                                 <div className="w-full lg:w-1/2 group cursor-pointer" onClick={() => openLightbox(img.src, img.alt, img.caption)}>
-                                    <div className="relative rounded-lg border border-white/10 bg-[#0A0A0A] p-2 shadow-2xl transition-all duration-500 group-hover:border-[#D4AF37]/30 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-center min-h-[350px]">
-                                        <div className="overflow-hidden rounded relative w-full flex items-center justify-center bg-[#050505]">
+                                    <div className="relative rounded-xl border border-white/5 bg-[#050505] p-1.5 shadow-2xl transition-all duration-500 group-hover:border-[#D4AF37]/20 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center justify-center h-auto">
+                                        <div className="overflow-hidden rounded-lg relative w-full flex items-center justify-center bg-[#050505] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)]">
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-[2px]">
                                                 <span className="p-4 bg-black/60 border border-white/10 text-white/90 tracking-widest text-xs rounded-full flex items-center gap-2 transition-all duration-300 group-hover:scale-110">
                                                     <Eye size={16} /> INSPECT VIEW
@@ -443,7 +443,7 @@ export default function AyanthiaraChitrakoot() {
                                             <img
                                                 src={img.src}
                                                 alt={img.alt}
-                                                className="w-full h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-[1.02]"
+                                                className="w-full h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-[1.02] rounded-lg"
                                             />
                                         </div>
                                     </div>
