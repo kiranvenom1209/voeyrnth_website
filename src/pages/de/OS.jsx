@@ -18,8 +18,20 @@ const FeatureBlock = ({ title, subtitle, description, items, image, reverse, ico
                         transition={{ duration: 0.6 }}
                     >
                         {Icon && <Icon size={32} className="text-[#C9A961] mb-8 opacity-80" />}
-                        <h2 className="text-3xl lg:text-4xl font-light text-white/95 leading-relaxed mb-4">{title}</h2>
+                        <h2 className="text-2xl lg:text-4xl font-light text-white/95 leading-relaxed mb-4">{title}</h2>
                         <h3 className="text-xl text-[#C9A961] font-light tracking-wide mb-8">{subtitle}</h3>
+
+                        {/* Mobile Image */}
+                        <div className="block lg:hidden mb-10 relative rounded-lg border border-white/10 p-2 shadow-2xl bg-[#0A0A0A] group-hover:border-[#D4AF37]/20 transition-colors duration-700">
+                            <div className="overflow-hidden rounded relative bg-black/40 aspect-[1920/988]">
+                                <img
+                                    src={image}
+                                    alt={title}
+                                    className="w-full h-auto object-top opacity-90 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-[1.02]"
+                                />
+                            </div>
+                        </div>
+
                         <p className="text-white/60 text-lg leading-relaxed font-light mb-10">
                             {description}
                         </p>
@@ -37,7 +49,7 @@ const FeatureBlock = ({ title, subtitle, description, items, image, reverse, ico
                     </m.div>
                 </div>
 
-                <div className="w-full lg:w-7/12">
+                <div className="hidden lg:block w-full lg:w-7/12">
                     <m.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -120,7 +132,7 @@ export default function DeOS() {
                                 <span className="w-2 h-2 rounded-full bg-[#C9A961] animate-pulse"></span>
                                 <span className="text-[#C9A961] text-xs font-medium tracking-wider uppercase">OS 5.0.1</span>
                             </div>
-                            <h1 className="text-5xl lg:text-7xl font-light text-white tracking-tight mb-8">
+                            <h1 className="text-5xl lg:text-7xl font-light text-white tracking-tight leading-[1.1] mb-8">
                                 Luxus ist Stille, <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB]">die gehorcht.</span>
                             </h1>
@@ -148,12 +160,12 @@ export default function DeOS() {
                         </m.div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] lg:h-[600px] flex justify-center lg:justify-end items-center mt-12 lg:mt-0">
+                    <div className="w-full lg:w-1/2 relative h-[350px] sm:h-[450px] lg:h-[600px] flex justify-center lg:justify-end items-end mt-12 lg:mt-0">
                         <m.div
                             initial={{ opacity: 0, scale: 0.9, x: 50 }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="absolute z-10 right-0 w-[85%] sm:w-[75%] lg:w-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+                            className="relative z-10 w-[85%] sm:w-[75%] lg:w-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
                         >
                             <img src="/assets/os/tablet/screencapture-192-168-153-1-5173-2026-03-02-11_28_48.png" alt="Tablet Interface" className="w-full h-auto" />
                         </m.div>
@@ -173,7 +185,7 @@ export default function DeOS() {
 
             {/* Main Deck / Command Center */}
             <FeatureBlock
-                title="Nicht noch ein Dashboard—"
+                title="Nicht noch ein Dashboard"
                 subtitle="ein Kommandodeck."
                 description="Vœrynth OS wurde entwickelt, um Entscheidungsmüdigkeit zu reduzieren. Es zeigt nur an, was wichtig ist—Präsenz, Klima, Sicherheit, Energie und Modi—damit Eigentümer und Personal schnell handeln können, ohne durch Apps suchen zu müssen."
                 items={[
@@ -339,7 +351,7 @@ export default function DeOS() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "100px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="w-[600px] md:w-[800px] aspect-[1920/988] shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black snap-center p-2"
+                                className="w-[85vw] sm:w-[600px] md:w-[800px] aspect-[1920/988] shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black snap-center p-2"
                             >
                                 <div className="w-full h-full rounded overflow-hidden relative">
                                     <img src={src} loading="lazy" alt={`Vœrynth OS Tablet Setup ${idx + 1}`} className="w-full h-auto object-top opacity-90 hover:opacity-100 transition-opacity duration-500" />
@@ -369,7 +381,7 @@ export default function DeOS() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "100px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="w-[300px] aspect-[1080/1985] shrink-0 rounded-[2.5rem] overflow-hidden border-[6px] border-[#161616] shadow-2xl relative bg-black snap-center"
+                                className="w-[85vw] sm:w-[300px] aspect-[1080/1985] shrink-0 rounded-[2.5rem] overflow-hidden border-[6px] border-[#161616] shadow-2xl relative bg-black snap-center"
                             >
                                 <div className="w-full h-full rounded-2xl overflow-hidden relative border-[6px] border-[#161616]">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-[#161616] rounded-b-xl z-20"></div>
