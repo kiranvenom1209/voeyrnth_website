@@ -2,3 +2,16 @@ node_modules
 dist
 .env
 .DS_Store
+
+# Oversized source files
+*.pptx
+*.ppt
+
+# Temporary scripts
+tmp_*.cjs
+tmp_*.js
+
+# Raw source asset folders (large binary files, not for deployment)
+vss/
+wallpanel_ss/
+source_file/

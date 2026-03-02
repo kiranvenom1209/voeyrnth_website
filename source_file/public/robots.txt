@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://voerynth.de/sitemap.xml
-LLM: https://voerynth.de/llms.txt
