@@ -64,7 +64,9 @@ const routes = [
     '/proof',
     '/proof/commissioning',
     '/proof/release-policy',
-    '/proof/audit-log'
+    '/proof/audit-log',
+    '/case-studies/ayanthiara-chitrakoot',
+    '/de/case-studies/ayanthiara-chitrakoot'
 ];
 
 function generateSitemap() {
@@ -80,7 +82,9 @@ ${routes.map(route => {
         let priority = '0.8';
         if (route === '/' || route === '/de') priority = '1.0';
         else if (['/platform', '/solutions', '/pricing', '/contact', '/private-access', '/pilot'].includes(route)) priority = '0.9';
+        else if (['/case-studies/ayanthiara-chitrakoot'].includes(route)) priority = '0.85';
         else if (['/de/about', '/de/platform', '/de/solutions', '/de/pricing', '/de/contact', '/de/security'].includes(route)) priority = '0.85';
+        else if (['/de/case-studies/ayanthiara-chitrakoot'].includes(route)) priority = '0.80';
         else if (route.startsWith('/de/')) priority = '0.75';
         else if (route.startsWith('/proof')) priority = '0.7';
 

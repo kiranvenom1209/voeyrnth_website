@@ -200,6 +200,40 @@ export default function DeHome() {
                 </div>
             </Section>
 
+            {/* Featured Case Study */}
+            <Section className="border-t border-white/5 py-32 bg-gradient-to-b from-[#0A0A0A] to-[#080808]">
+                <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="text-center lg:text-left">
+                        <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+                            <span className="text-[#C9A961] text-xs font-mono tracking-widest uppercase">Live-Umgebung Validierung</span>
+                        </div>
+                        <h2 className="text-3xl lg:text-4xl font-light text-white/95 mb-6 leading-relaxed">
+                            Ayanthiara Chitrakoot
+                        </h2>
+                        <p className="text-white/50 leading-loose text-sm font-light mb-10 max-w-lg mx-auto lg:mx-0">
+                            Ein Einblick in {BRAND_NAME}, das architektoniert wurde, um ein mehrstöckiges Anwesen autonom zu verwalten. Entdecken Sie die kontinuierliche Zero-Cloud-Logik, die sensorische Erfassung und die deterministischen Fallback-Systeme, die nativ in einer echten Luxusumgebung eingesetzt werden.
+                        </p>
+                        <SmartLink
+                            to="/de/case-studies/ayanthiara-chitrakoot"
+                            className="inline-block border border-[#D4AF37]/30 text-[#C9A961] px-8 py-3 text-sm tracking-widest hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/50 transition-all duration-200"
+                        >
+                            FALLSTUDIE LESEN
+                        </SmartLink>
+                    </div>
+                    <div className="relative group hidden lg:block">
+                        <div className="absolute -inset-1 bg-gradient-to-tr from-[#D4AF37]/20 to-transparent rounded-lg blur-lg opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                        <div className="aspect-[16/10] rounded-lg border border-white/10 overflow-hidden relative shadow-2xl bg-[#050505]">
+                            <img
+                                src="/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png"
+                                alt="Ayanthiara Chitrakoot Live Floorplan"
+                                className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
             {/* Investitions-CTA */}
             <Section className="border-t border-white/5 py-16">
                 <div className="max-w-4xl mx-auto text-center">

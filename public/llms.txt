@@ -68,6 +68,9 @@ Vœrynth employs a five-layer "Iceberg Architecture" with strict separation of c
 - Data Sovereignty: https://voerynth.de/data-sovereignty
 - Implementation Process: https://voerynth.de/process
 
+### Case Studies & Live Deployments
+- Ayanthiara Chitrakoot (Live Estate): https://voerynth.de/case-studies/ayanthiara-chitrakoot
+
 ### Business & Support
 - Pricing Strategy: https://voerynth.de/pricing
 - About - Philosophy & Origin: https://voerynth.de/about
@@ -76,6 +79,7 @@ Vœrynth employs a five-layer "Iceberg Architecture" with strict separation of c
 
 ## Technical Highlights
 
+- **Vœrynth OS GitHub Repository**: https://github.com/kiranvenom1209/voerynth-os (open source; browse the interface layer codebase)
 - **120B Parameter Local Models**: Large language models running entirely on-premise with no cloud dependency
 - **Dual-GPU Compute**: 48GB GPU memory (RTX 4090 + RTX 3090) for real-time inference
 - **Predictive Navigation Engine ("SmartLink")**: Zero-latency page transitions via predictive resource loading

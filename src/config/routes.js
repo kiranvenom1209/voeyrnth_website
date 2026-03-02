@@ -29,6 +29,7 @@ import Protocols from '../pages/Protocols';
 import SecurityModel from '../pages/SecurityModel';
 import Pilot from '../pages/Pilot';
 import NotFound from '../pages/NotFound';
+import CaseStudyAyanthiaraChitrakoot from '../pages/case-studies/AyanthiaraChitrakoot';
 
 export const routes = {
     '/': { component: Home, preload: ['/assets/home_hero_bg_v2.webp'] },
@@ -60,5 +61,6 @@ export const routes = {
     '/protocols': { component: Protocols, preload: [] },
     '/security/model': { component: SecurityModel, preload: [] },
     '/pilot': { component: Pilot, preload: [] },
+    '/case-studies/ayanthiara-chitrakoot': { component: CaseStudyAyanthiaraChitrakoot, preload: [] },
     '*': { component: NotFound, preload: ['/assets/home_hero_bg_v2.webp'] }
 };

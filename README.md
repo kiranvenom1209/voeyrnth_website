@@ -134,6 +134,9 @@ To deliver a truly native, app-like feel on the web, we completely re-engineered
 - **Dynamic SEO & Metadata Engine:** Updated `llms.txt`, `llm-full.txt`, and synchronized `sitemap.xml` with the latest deep pages. Restructured routing to prevent metadata staleness.
 - **Mobile Asset Delivery:** Fixed path generation logic for dynamically loading mobile-optimized Hero images across all deep pages.
 - **Navigation Reliability:** Resolved critical routing bugs affecting the localized `/de/design` path transitions.
+- **Vœrynth OS 5.0.1 Page Redesign (March 2026):** Complete overhaul of `src/pages/OS.jsx` and `de/OS.jsx` with a dual-device hero (phone + tablet mockup), dedicated mobile gallery, tablet gallery with captioned screenshots, marine/yachts section, and a GitHub open-source CTA linking to `github.com/kiranvenom1209/voerynth-os`.
+- **Ayanthiara Chitrakoot Case Study Launch:** Published the first live deployment case study (`/case-studies/ayanthiara-chitrakoot`) — a real multi-level estate running Vœrynth Système. Features a Technical Datasheet with a Vœrynth Stack card (Reasoning Core + OS 5.0.1), gallery with interactive lightbox, full automation blueprint snippets, security model documentation, and bidirectional CTAs to OS and GitHub.
+- **Homepage Credibility Block:** Injected a Featured Case Study promotional section into both `Home.jsx` and `de/Home.jsx`, featuring the live floorplan image above the pricing section to anchor brand trust with proof before the user sees investment numbers.
 
 ---
 

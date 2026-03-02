@@ -45,6 +45,7 @@ const DeProofIndex = lazy(() => import('./pages/de/proof/ProofIndex'));
 const DeProofCommissioning = lazy(() => import('./pages/de/proof/ProofCommissioning'));
 const DeProofReleasePolicy = lazy(() => import('./pages/de/proof/ProofReleasePolicy'));
 const DeProofAuditLog = lazy(() => import('./pages/de/proof/ProofAuditLog'));
+const DeCaseStudyAyanthiaraChitrakoot = lazy(() => import('./pages/de/case-studies/AyanthiaraChitrakoot'));
 
 // Helper to wrap components
 const getElement = (path) => {
@@ -89,6 +90,7 @@ function ScrollHandler() {
 
 export default function App() {
     const [mounted, setMounted] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         setMounted(true);
@@ -144,6 +146,7 @@ export default function App() {
                         <Route path="/de/proof/commissioning" element={<PageTransition><DeProofCommissioning /></PageTransition>} />
                         <Route path="/de/proof/release-policy" element={<PageTransition><DeProofReleasePolicy /></PageTransition>} />
                         <Route path="/de/proof/audit-log" element={<PageTransition><DeProofAuditLog /></PageTransition>} />
+                        <Route path="/de/case-studies/ayanthiara-chitrakoot" element={<PageTransition><DeCaseStudyAyanthiaraChitrakoot /></PageTransition>} />
 
                         {Object.keys(routes).map(path => {
                             if (path === '/' || path === '*') return null;

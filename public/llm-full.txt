@@ -654,6 +654,47 @@ Clear boundaries. Audited access points. No undefined behavior. Supported integr
 
 ---
 
+## CASE STUDIES & LIVE DEPLOYMENTS
+
+### Ayanthiara Chitrakoot — Live Estate Deployment
+
+**URL**: https://voerynth.de/case-studies/ayanthiara-chitrakoot
+
+Ayanthiara Chitrakoot is a real, multi-level estate running Vœrynth Système in a live, production environment. This is not a demo or simulated installation. It is an active beta deployment used to stress-test the Vœrynth architecture against real-world conditions.
+
+**Environment**:
+- Multi-floor private residence
+- Philips Hue lighting across multiple rooms and scenes
+- Aqara FP2 presence detection (living/dining zones)
+- TC71 security cameras (living room + entrance)
+- Matter-enabled smart lock with battery monitoring
+- Android TV integration
+- Personal wearable health metric monitoring (heart rate, SpO₂, blood pressure)
+
+**Control Stack**:
+- Core Platform: Home Assistant OS/Core + Lovelace UI (kiosk-style wall tablet dashboard)
+- Vœrynth Stack: Reasoning Core (proprietary neural AI engine) + Vœrynth OS 5.0.1 (Interface Layer)
+- Automations: YAML + local TTS + presence-aware automation chains
+- Protocols: Zigbee, Matter, Wi-Fi/LAN, RTSP streaming
+
+**Key Implementations**:
+1. **Live Floorplan View** — interactive floor map with real-time entity states overlaid
+2. **Presence-Aware Lighting** — rooms respond to occupancy without manual triggers
+3. **Medical Escalation Protocol** — monitors wearable health metrics and escalates emergencies automatically
+4. **Security Automation** — stateful + persistent logic when armed; camera streams + door sensor integration
+5. **Entertainment Integration** — Android TV remote, volume control, media casting, local TTS playback
+6. **Energy Monitoring** — per-plug power draw visibility via Tapo smart plugs
+
+**Core Design Principles Applied**:
+- Local-first behavior (works without internet)
+- Manual fallback always available
+- Automations drive daily life; the dashboard refines it
+- Security logic is stateful and persistent while armed
+
+**GitHub (Vœrynth OS interface layer)**: https://github.com/kiranvenom1209/voerynth-os
+
+---
+
 ## CONTACT & SUPPORT
 
 ### Request Private Demo
@@ -699,6 +740,7 @@ Information for strategic investors and technical collaborators. Vœrynth is not
 - Zero-latency page transitions via hybrid prefetching
 - Viewport-adaptive high-fidelity asset delivery (4K -> WebP)
 - Advanced Service Worker (Workbox) strategy for offline sovereignty
+- **Vœrynth OS open-source interface layer**: https://github.com/kiranvenom1209/voerynth-os
 
 **Dynamic SEO System**:
 - Route-specific metadata generation using `react-helmet-async`
@@ -761,4 +803,4 @@ Estate automation, luxury home automation, smart home control, deterministic con
 
 *Vœrynth Système — Defining the Future of Autonomous Living.*
 
-Last Updated: February 2026
+Last Updated: March 2026
