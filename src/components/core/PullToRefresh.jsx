@@ -39,6 +39,13 @@ export default function PullToRefresh({ children }) {
             setTimeout(() => {
                 window.location.reload(true);
             }, 500);
+
+            // Fallback: If the page doesn't actually reload (e.g. soft route handling), reset the UI
+            setTimeout(() => {
+                setIsRefreshing(false);
+                setPullDistance(0);
+            }, 2500);
+
         } catch (error) {
             console.error('Error clearing cache:', error);
             window.location.reload(true);
@@ -133,7 +140,7 @@ export default function PullToRefresh({ children }) {
                                 <RefreshCw size={24} className="opacity-80" />
                             </m.div>
                             <span className="text-[10px] uppercase tracking-widest text-[#C9A961]/80 font-light drop-shadow-md">
-                                {isRefreshing ? 'Purging Cache...' : 'Pull to refresh'}
+                                {isRefreshing ? 'Synchronizing with HQ...' : 'Pull to establish uplink'}
                             </span>
                         </m.div>
                     </m.div>
