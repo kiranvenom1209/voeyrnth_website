@@ -28,12 +28,20 @@ export default function PullToRefresh({ children }) {
             }
 
             const currentLang = localStorage.getItem('i18nextLng');
+            const langSelected = localStorage.getItem('voerynth_lang_selected');
+            const langSelectedSession = sessionStorage.getItem('voerynth_lang_selected');
 
             localStorage.clear();
             sessionStorage.clear();
 
             if (currentLang) {
                 localStorage.setItem('i18nextLng', currentLang);
+            }
+            if (langSelected) {
+                localStorage.setItem('voerynth_lang_selected', langSelected);
+            }
+            if (langSelectedSession) {
+                sessionStorage.setItem('voerynth_lang_selected', langSelectedSession);
             }
 
             setTimeout(() => {
