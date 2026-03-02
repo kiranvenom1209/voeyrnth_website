@@ -128,8 +128,37 @@ export default function AyanthiaraChitrakoot() {
                 title="Ayanthiara Chitrakoot — Live Vœrynth OS Deployment | Case Study"
                 description="A real multi-level estate running Vœrynth Système live. Local-first automation, zero-cloud logic, presence-aware control, and deterministic fallbacks deployed in a luxury environment."
                 keywords="case study, live deployment, ayanthiara chitrakoot, estate automation, neural interface os, local AI, Home Assistant, Vœrynth OS, smart home case study, luxury estate automation"
-                canonical="/case-studies/ayanthiara-chitrakoot"
-                ogImage="/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png"
+                image="/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png"
+                type="article"
+                jsonLd={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "TechArticle",
+                        "headline": "Ayanthiara Chitrakoot — Live Vœrynth OS Deployment",
+                        "description": "A real multi-level estate running Vœrynth Système live. Local-first automation, zero-cloud logic, presence-aware control, and deterministic fallbacks deployed in a luxury environment.",
+                        "image": "https://voerynth.de/assets/case-studies/ayanthiara-chitrakoot/live_view_floorplan_light_controls.png",
+                        "url": "https://voerynth.de/case-studies/ayanthiara-chitrakoot",
+                        "author": {
+                            "@type": "Organization",
+                            "name": "Vœrynth Système",
+                            "url": "https://voerynth.de"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Vœrynth Système",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://voerynth.de/assets/logo/logo.svg"
+                            }
+                        },
+                        "about": [
+                            { "@type": "Thing", "name": "Smart Home Automation" },
+                            { "@type": "Thing", "name": "Local-First Architecture" },
+                            { "@type": "Thing", "name": "Home Assistant" }
+                        ],
+                        "inLanguage": "en"
+                    }
+                ]}
             />
 
             {/* LIGHTBOX */}

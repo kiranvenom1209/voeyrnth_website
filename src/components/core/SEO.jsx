@@ -12,8 +12,16 @@ export default function SEO({
     keywords,
     type = "website",
     noindex = false,
-    image = "/assets/platform_hero_bg_v2.png"
+    // Accept both `image` and `ogImage` (ogImage takes precedence if both provided)
+    image: imageProp = "/assets/platform_hero_bg_v2.png",
+    ogImage,
+    // Optional array of extra JSON-LD objects to inject for this specific page
+    jsonLd: extraJsonLd = [],
+    // canonical is computed from useLocation — this prop is intentionally ignored
+    // but accepted to avoid React unknown-prop warnings from callers
+    canonical: _canonical,
 }) {
+    const image = ogImage || imageProp;
     const { pathname } = useLocation();
 
     // ── Language detection ────────────────────────────────────────────────
@@ -102,6 +110,11 @@ export default function SEO({
             <script type="application/ld+json">
                 {JSON.stringify(schemaOrgJSONLD)}
             </script>
+            {extraJsonLd.map((schema, i) => (
+                <script key={i} type="application/ld+json">
+                    {JSON.stringify(schema)}
+                </script>
+            ))}
         </Helmet>
     );
 }
