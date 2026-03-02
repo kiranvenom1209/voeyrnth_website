@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -18,7 +19,8 @@ export default function SuccessModal({
     const resolvedMessage = message ?? 'We have received your coordinates. Expect a secure response shortly.';
     const resolvedClose = closeLabel ?? t('modal.close', 'Close Transmission');
 
-    return (
+    // Portal to document.body to escape PullToRefresh transform that breaks position:fixed
+    return createPortal(
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
@@ -75,6 +77,7 @@ export default function SuccessModal({
                     </m.div>
                 </div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     );
 }

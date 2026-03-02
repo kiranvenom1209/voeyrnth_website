@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Shield, Activity, Cpu, Server, Layers, Home, Eye, Lock, Moon, Music, Zap, ShieldAlert, CheckCircle2, XCircle, HeartPulse, Camera, Terminal, Copy, Check, X } from 'lucide-react';
 import SmartLink from '../../components/core/SmartLink';
@@ -161,36 +162,39 @@ export default function AyanthiaraChitrakoot() {
                 ]}
             />
 
-            {/* LIGHTBOX */}
-            <AnimatePresence>
-                {lightboxImage && (
-                    <m.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md cursor-pointer"
-                        onClick={closeLightbox}
-                    >
-                        <button
-                            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
-                            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            {/* LIGHTBOX — portalled to document.body to escape PullToRefresh transform */}
+            {createPortal(
+                <AnimatePresence>
+                    {lightboxImage && (
+                        <m.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md cursor-pointer"
+                            onClick={closeLightbox}
                         >
-                            <X size={32} />
-                        </button>
-                        <div className="max-w-6xl w-full max-h-[90vh] flex flex-col items-center" onClick={e => e.stopPropagation()}>
-                            <img
-                                src={lightboxImage.src}
-                                alt={lightboxImage.alt}
-                                className="max-h-[80vh] w-auto object-contain rounded-lg border border-white/10 shadow-2xl"
-                            />
-                            <div className="mt-6 text-center">
-                                <h4 className="text-[#D4AF37] font-medium tracking-wide mb-1">{lightboxImage.title}</h4>
-                                <p className="text-white/70 text-sm font-light">{lightboxImage.caption}</p>
+                            <button
+                                className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+                                onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+                            >
+                                <X size={32} />
+                            </button>
+                            <div className="max-w-6xl w-full max-h-[90vh] flex flex-col items-center" onClick={e => e.stopPropagation()}>
+                                <img
+                                    src={lightboxImage.src}
+                                    alt={lightboxImage.alt}
+                                    className="max-h-[80vh] w-auto object-contain rounded-lg border border-white/10 shadow-2xl"
+                                />
+                                <div className="mt-6 text-center">
+                                    <h4 className="text-[#D4AF37] font-medium tracking-wide mb-1">{lightboxImage.title}</h4>
+                                    <p className="text-white/70 text-sm font-light">{lightboxImage.caption}</p>
+                                </div>
                             </div>
-                        </div>
-                    </m.div>
-                )}
-            </AnimatePresence>
+                        </m.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
 
             {/* A: HERO */}
             <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[#0C0C0C] via-[#0A0A0A] to-[#080808]">
