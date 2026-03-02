@@ -371,7 +371,7 @@ export default function OS() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "100px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="w-[85vw] sm:w-[600px] md:w-[800px] aspect-[1920/988] shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black snap-center p-2"
+                                className="w-[85vw] sm:w-[600px] md:w-[800px] aspect-[1920/988] shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative bg-black snap-center snap-always p-2"
                             >
                                 <div className="w-full h-full rounded overflow-hidden relative">
                                     <img src={src} loading="lazy" alt={`Vœrynth OS Tablet Setup ${idx + 1}`} className="w-full h-auto object-top opacity-90 hover:opacity-100 transition-opacity duration-500" />
@@ -401,7 +401,7 @@ export default function OS() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "100px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="w-[85vw] sm:w-[300px] aspect-[1080/1985] shrink-0 rounded-[2.5rem] overflow-hidden border-[6px] border-[#161616] shadow-2xl relative bg-black snap-center"
+                                className="w-[85vw] sm:w-[300px] aspect-[1080/1985] shrink-0 rounded-[2.5rem] overflow-hidden border-[6px] border-[#161616] shadow-2xl relative bg-black snap-center snap-always"
                             >
                                 <div className="w-full h-full rounded-2xl overflow-hidden relative border-[6px] border-[#161616]">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-[#161616] rounded-b-xl z-20"></div>
