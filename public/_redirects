@@ -1,4 +1,4 @@
-# Pass-through rules for static bot/crawlable files (must come BEFORE the SPA catch-all)
+# Pass-through rules for static bot/crawlable files
 /robots.txt        /robots.txt        200
 /sitemap.xml       /sitemap.xml       200
 /llms.txt          /llms.txt          200
@@ -8,5 +8,71 @@
 /sw.js             /sw.js             200
 /favicon.svg       /favicon.svg       200
 
-# SPA catch-all — serves index.html for all React Router routes
+# Pass-through rules for all pre-rendered EN routes
+# These ensure Netlify serves the pre-rendered HTML instead of falling back to index.html
+/                                               /index.html                                             200
+/platform                                       /platform/index.html                                    200
+/solutions                                      /solutions/index.html                                   200
+/design                                         /design/index.html                                      200
+/security                                       /security/index.html                                    200
+/security/model                                 /security/model/index.html                              200
+/about                                          /about/index.html                                       200
+/pricing                                        /pricing/index.html                                     200
+/contact                                        /contact/index.html                                     200
+/systeme                                        /systeme/index.html                                     200
+/os                                             /os/index.html                                          200
+/automations                                    /automations/index.html                                 200
+/private-estates                                /private-estates/index.html                             200
+/penthouses                                     /penthouses/index.html                                  200
+/superyachts                                    /superyachts/index.html                                 200
+/industrial-suites                              /industrial-suites/index.html                           200
+/energy                                         /energy/index.html                                      200
+/private-access                                 /private-access/index.html                              200
+/data-sovereignty                               /data-sovereignty/index.html                            200
+/process                                        /process/index.html                                     200
+/specs                                          /specs/index.html                                       200
+/architecture                                   /architecture/index.html                                200
+/hardware                                       /hardware/index.html                                    200
+/protocols                                      /protocols/index.html                                   200
+/pilot                                          /pilot/index.html                                       200
+/proof                                          /proof/index.html                                       200
+/proof/commissioning                            /proof/commissioning/index.html                         200
+/proof/release-policy                           /proof/release-policy/index.html                        200
+/proof/audit-log                                /proof/audit-log/index.html                             200
+/case-studies/ayanthiara-chitrakoot             /case-studies/ayanthiara-chitrakoot/index.html          200
+
+# Pass-through rules for all pre-rendered DE routes
+/de                                             /de/index.html                                          200
+/de/                                            /de/index.html                                          200
+/de/platform                                    /de/platform/index.html                                 200
+/de/solutions                                   /de/solutions/index.html                                200
+/de/design                                      /de/design/index.html                                   200
+/de/security                                    /de/security/index.html                                 200
+/de/security/model                              /de/security/model/index.html                           200
+/de/about                                       /de/about/index.html                                    200
+/de/pricing                                     /de/pricing/index.html                                  200
+/de/contact                                     /de/contact/index.html                                  200
+/de/systeme                                     /de/systeme/index.html                                  200
+/de/os                                          /de/os/index.html                                       200
+/de/automations                                 /de/automations/index.html                              200
+/de/private-estates                             /de/private-estates/index.html                          200
+/de/penthouses                                  /de/penthouses/index.html                               200
+/de/superyachts                                 /de/superyachts/index.html                              200
+/de/industrial-suites                           /de/industrial-suites/index.html                        200
+/de/energy                                      /de/energy/index.html                                   200
+/de/private-access                              /de/private-access/index.html                           200
+/de/data-sovereignty                            /de/data-sovereignty/index.html                         200
+/de/process                                     /de/process/index.html                                  200
+/de/specs                                       /de/specs/index.html                                    200
+/de/architecture                                /de/architecture/index.html                             200
+/de/hardware                                    /de/hardware/index.html                                 200
+/de/protocols                                   /de/protocols/index.html                                200
+/de/pilot                                       /de/pilot/index.html                                    200
+/de/proof                                       /de/proof/index.html                                    200
+/de/proof/commissioning                         /de/proof/commissioning/index.html                      200
+/de/proof/release-policy                        /de/proof/release-policy/index.html                     200
+/de/proof/audit-log                             /de/proof/audit-log/index.html                          200
+/de/case-studies/ayanthiara-chitrakoot          /de/case-studies/ayanthiara-chitrakoot/index.html       200
+
+# SPA catch-all — serves index.html for all other React Router routes (e.g. 404 pages)
 /* /index.html 200
