@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,11 @@ export default function SuccessModal({
     const resolvedMessage = message ?? 'We have received your coordinates. Expect a secure response shortly.';
     const resolvedClose = closeLabel ?? t('modal.close', 'Close Transmission');
 
+    const [isMounted, setIsMounted] = useState(false);
+    useEffect(() => { setIsMounted(true); }, []);
+
     // Portal to document.body to escape PullToRefresh transform that breaks position:fixed
+    if (!isMounted) return null;
     return createPortal(
         <AnimatePresence>
             {isOpen && (

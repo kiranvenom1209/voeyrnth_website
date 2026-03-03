@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Shield, Activity, Cpu, Server, Layers, Home, Eye, Lock, Moon, Music, Zap, ShieldAlert, CheckCircle2, XCircle, HeartPulse, Camera, Terminal, Copy, Check, X } from 'lucide-react';
@@ -40,6 +40,8 @@ const CodeSnippet = ({ code, language = "yaml", title }) => {
 
 export default function AyanthiaraChitrakoot() {
     const [lightboxImage, setLightboxImage] = useState(null);
+    const [isMounted, setIsMounted] = useState(false);
+    useEffect(() => { setIsMounted(true); }, []);
 
     const openLightbox = (imgSrc, altText, caption) => {
         setLightboxImage({ src: imgSrc, alt: altText, caption });
@@ -163,7 +165,7 @@ export default function AyanthiaraChitrakoot() {
             />
 
             {/* LIGHTBOX — portalled to document.body to escape PullToRefresh transform */}
-            {createPortal(
+            {isMounted && createPortal(
                 <AnimatePresence>
                     {lightboxImage && (
                         <m.div
