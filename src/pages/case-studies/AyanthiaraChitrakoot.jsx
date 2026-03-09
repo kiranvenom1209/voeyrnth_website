@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { m, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Shield, Activity, Cpu, Server, Layers, Home, Eye, Lock, Moon, Music, Zap, ShieldAlert, CheckCircle2, XCircle, HeartPulse, Camera, Terminal, Copy, Check, X } from 'lucide-react';
+import { ChevronRight, Shield, Activity, Cpu, Server, Layers, Home, Eye, Lock, Moon, Music, Zap, ShieldAlert, CheckCircle2, XCircle, HeartPulse, Camera, Terminal, Copy, Check, X, Brain } from 'lucide-react';
 import SmartLink from '../../components/core/SmartLink';
 import { Section, Card, Tag } from '../../components/ui';
 import SEO from '../../components/core/SEO';
@@ -235,6 +235,19 @@ export default function AyanthiaraChitrakoot() {
                             </SmartLink>
                             <a href="#blueprints" className="inline-flex justify-center items-center border border-white/20 text-white/90 px-8 py-4 text-xs md:text-sm tracking-widest uppercase hover:border-white/60 hover:bg-white/[0.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap">
                                 SEE THE AUTOMATION BLUEPRINTS
+                            </a>
+                        </div>
+                        <div className="mt-6 sm:mt-8 flex justify-center sm:justify-start">
+                            <a
+                                href="/pdf/Ammu___Mycroft_at_Home__A_Living__Breathing_House_that_Learns_Routines.pdf"
+                                download
+                                className="inline-flex items-center gap-2 sm:gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-white/50 hover:text-[#D4AF37] transition-all duration-300 group border-b border-transparent hover:border-[#D4AF37]/30 pb-1"
+                            >
+                                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                                </svg>
+                                <span>Read Local LLM Engine Preprint (PDF)</span>
+                                <span className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-1 transition-all duration-300">→</span>
                             </a>
                         </div>
                     </m.div>
@@ -541,31 +554,48 @@ export default function AyanthiaraChitrakoot() {
                     <div className="mb-24">
                         <h3 className="text-xl font-light text-white/90 mb-8 border-b border-white/10 pb-4 inline-block">Architecture Flow</h3>
 
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
-                            {[
-                                { title: "Devices & Signals", desc: "Sensors, Cameras, States", icon: Activity },
-                                { title: "Home Assistant", desc: "Local State Machine & Core", icon: Server },
-                                { title: "Automations", desc: "YAML Logic & Context Evaluation", icon: Cpu },
-                                { title: "Output / Control", desc: "Lighting, Relays & Voice TTS", icon: Layers }
-                            ].map((block, idx) => (
-                                <React.Fragment key={idx}>
-                                    <div className="flex-1 w-full md:w-auto p-6 bg-[#050505] border border-white/10 rounded-lg text-center flex flex-col items-center">
-                                        <block.icon size={24} className="text-[#C9A961] mb-4 opacity-80" />
-                                        <h5 className="text-white/90 font-medium text-sm mb-1">{block.title}</h5>
-                                        <p className="text-white/40 text-xs font-light">{block.desc}</p>
-                                    </div>
-                                    {idx < 3 && (
-                                        <div className="text-white/20 hidden md:block">
-                                            <ChevronRight size={24} />
+                        <div className="w-full pb-4">
+                            <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 lg:gap-8 w-full px-2 lg:px-4">
+                                {[
+                                    { title: "Devices & Signals", desc: "Sensors, Cameras, States", icon: Activity },
+                                    { title: "Home Assistant", desc: "Local State Machine & Core", icon: Server },
+                                    { title: "Neural Core", desc: "LLM Reasoning & Intent", icon: Brain },
+                                    { title: "Automations", desc: "YAML Logic & Execution", icon: Cpu },
+                                    { title: "Output / Control", desc: "Lighting, Relays & Voice TTS", icon: Layers }
+                                ].map((block, idx, arr) => (
+                                    <React.Fragment key={idx}>
+                                        <div className="flex-[1_1_250px] w-full max-w-[300px] p-6 bg-[#050505] border border-white/10 rounded-lg text-center flex flex-col items-center min-h-[160px] justify-center">
+                                            <block.icon size={28} className="text-[#C9A961] mb-4 opacity-80" />
+                                            <h5 className="text-white/90 font-medium text-sm lg:text-base mb-2">{block.title}</h5>
+                                            <p className="text-white/40 text-xs font-light">{block.desc}</p>
                                         </div>
-                                    )}
-                                    {idx < 3 && (
-                                        <div className="text-white/20 md:hidden py-2">
-                                            <ChevronRight size={24} className="rotate-90" />
-                                        </div>
-                                    )}
-                                </React.Fragment>
-                            ))}
+                                        {idx < arr.length - 1 && (
+                                            <div className="relative hidden xl:flex flex-shrink-0 items-center justify-center w-8">
+                                                {/* Static connecting line */}
+                                                <div className="absolute w-full h-[1px] bg-white/10" />
+                                                {/* Flowing particle */}
+                                                <m.div
+                                                    className="absolute w-2 h-2 rounded-full bg-[#C9A961] shadow-[0_0_12px_#C9A961]"
+                                                    animate={{ x: [-16, 16], opacity: [0, 1, 1, 0] }}
+                                                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear", times: [0, 0.2, 0.8, 1], delay: idx * 0.4 }}
+                                                />
+                                            </div>
+                                        )}
+                                        {idx < arr.length - 1 && (
+                                            <div className="relative xl:hidden py-4 flex-shrink-0 flex items-center justify-center h-8 w-full md:w-auto md:hidden">
+                                                {/* Static vertical connecting line */}
+                                                <div className="absolute h-full w-[1px] bg-white/10" />
+                                                {/* Flowing vertical particle */}
+                                                <m.div
+                                                    className="absolute w-1.5 h-1.5 rounded-full bg-[#C9A961] shadow-[0_0_8px_#C9A961]"
+                                                    animate={{ y: [-12, 12], opacity: [0, 1, 1, 0] }}
+                                                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear", times: [0, 0.2, 0.8, 1], delay: idx * 0.4 }}
+                                                />
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
