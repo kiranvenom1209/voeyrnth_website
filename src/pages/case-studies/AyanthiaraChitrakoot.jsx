@@ -281,7 +281,7 @@ export default function AyanthiaraChitrakoot() {
             {/* UPGRADE A: METRICS STRIP */}
             <Section className="bg-[#050505] border-y border-white/5 py-12">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-x divide-white/5">
                         <div className="px-4">
                             <h4 className="text-3xl font-light text-[#D4AF37] mb-2">40+</h4>
                             <p className="text-white/50 text-xs tracking-widest uppercase">Automations</p>
@@ -297,6 +297,10 @@ export default function AyanthiaraChitrakoot() {
                         <div className="px-4">
                             <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">Zigbee / Matter / LAN</h4>
                             <p className="text-white/50 text-xs tracking-widest uppercase">Control Protocols</p>
+                        </div>
+                        <div className="px-4 border-t border-white/5 md:border-t-0 pt-6 md:pt-0">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">OOB Sentinel</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Hardware Watchdog</p>
                         </div>
                     </div>
                 </div>
@@ -345,7 +349,8 @@ export default function AyanthiaraChitrakoot() {
                                 "Auto-arming security when away; auto-disarming on arrival",
                                 "Presence simulation when away (anti-burglary realism)",
                                 "Environmental awareness: weather, humidity, wind, energy, air quality (as available)",
-                                "Voice assistants with status states (Listening / Thinking / Responding)"
+                                "Voice assistants with status states (Listening / Thinking / Responding)",
+                                "Autonomous hardware-level recovery (Vœrynth Sentinel Watchdog)"
                             ].map((bullet, idx) => (
                                 <li key={idx} className="flex items-start gap-4">
                                     <span className="mt-1.5"><ChevronRight size={14} className="text-[#C9A961]" /></span>
@@ -360,6 +365,7 @@ export default function AyanthiaraChitrakoot() {
                             { label: "Scene Engine", icon: Layers },
                             { label: "Local Voice", icon: Server },
                             { label: "Security Loop", icon: ShieldAlert },
+                            { label: "Hardware Watchdog", icon: Zap },
                             { label: "Energy + Health Deck", icon: HeartPulse },
                             { label: "Manual override always available", icon: Lock }
                         ].map((chip, idx) => (
@@ -627,6 +633,10 @@ export default function AyanthiaraChitrakoot() {
                                         <span className="text-white/90 font-normal text-xs tracking-wider uppercase">Vœrynth OS 5.0.1 (Interface Layer)</span>
                                         <span className="text-white/50 text-xs leading-relaxed">Custom neural interface OS — bypassed in this beta environment; stress-tested directly against raw HA Lovelace for resilience validation.</span>
                                     </li>
+                                    <li className="flex flex-col gap-1 pt-2 border-t border-white/5">
+                                        <span className="text-white/90 font-normal text-xs tracking-wider uppercase">Vœrynth Sentinel (OOB Recovery)</span>
+                                        <span className="text-white/50 text-xs leading-relaxed">Isolated out-of-band hardware telemetry daemon on a separate Pi 5, performing bifurcated health polling and mechanical power cycling via a Tuya smart relay.</span>
+                                    </li>
                                 </ul>
                                 <div className="mt-6 flex flex-wrap gap-3">
                                     <a href="/os" className="inline-flex items-center gap-1.5 text-[10px] tracking-widest text-[#C9A961] border border-[#D4AF37]/20 px-3 py-1.5 rounded hover:bg-[#D4AF37]/5 transition-colors">VIEW OS →</a>
@@ -659,7 +669,8 @@ export default function AyanthiaraChitrakoot() {
                                     <li><strong className="text-white/90 font-normal">Presence:</strong> Aqara FP2 zones (living/dining) + camera person detection sensors</li>
                                     <li><strong className="text-white/90 font-normal">Cameras:</strong> TC71 streams (living + entrance) + additional cams</li>
                                     <li><strong className="text-white/90 font-normal">Lock:</strong> Matter-enabled main lock + door sensor + battery monitoring</li>
-                                    <li><strong className="text-white/90 font-normal">Plugs:</strong> Tapo power strip/smart plugs (workstation, signage, etc.)</li>
+                                    <li><strong className="text-white/90 font-normal">Plugs:</strong> Tapo power strip/smart plugs</li>
+                                    <li><strong className="text-white/90 font-normal">Watchdog:</strong> Raspberry Pi 5 + Tuya Smart Relay (OOB Recovery)</li>
                                     <li><strong className="text-white/90 font-normal">Entertainment:</strong> Android TV + remote integration</li>
                                     <li><strong className="text-white/90 font-normal">Personal:</strong> Phone + watch health metrics</li>
                                 </ul>
@@ -668,7 +679,7 @@ export default function AyanthiaraChitrakoot() {
                             <div className="bg-[#050505] border border-white/5 p-8 rounded-lg">
                                 <h4 className="text-[#C9A961] text-xs tracking-widest uppercase mb-6 flex items-center gap-2"><Activity size={14} /> Protocols & Transport</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Zigbee (Hue ecosystem)', 'Matter (door lock)', 'Wi-Fi / LAN', 'RTSP/streaming', 'Local TTS output', 'Cloud TTS (optional quality loop)'].map((p, i) => (
+                                    {['Zigbee (Hue ecosystem)', 'Matter (door lock)', 'Wi-Fi / LAN', 'tinytuya (Actuation)', 'HTTP/REST (Telemetry)', 'RTSP/streaming', 'Local TTS output', 'Cloud TTS (optional quality loop)'].map((p, i) => (
                                         <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-xs text-white/70 rounded">{p}</span>
                                     ))}
                                 </div>
@@ -680,6 +691,7 @@ export default function AyanthiaraChitrakoot() {
                                     <li>• Manual fallback always available</li>
                                     <li>• Automations drive daily life; dashboard refines it</li>
                                     <li>• Security logic is stateful + persistent while armed</li>
+                                    <li>• Isolated OOB recovery handles critical fail-states</li>
                                 </ul>
                             </div>
                         </div>
@@ -701,6 +713,30 @@ export default function AyanthiaraChitrakoot() {
                                 </li>
                                 <li className="flex gap-3">
                                     <span className="text-[#C9A961]">—</span> Every critical action is logged and reversible.
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* UPGRADE C: HIGH AVAILABILITY & RECOVERY */}
+                        <div className="mt-8 bg-[#0A0A0A] border border-[#D4AF37]/30 p-8 rounded-lg">
+                            <h4 className="text-[#C9A961] text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
+                                <Server size={16} /> Enterprise-Grade Reliability & Recovery
+                            </h4>
+                            <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+                                What separates this from a standard enthusiast smart home installation?
+                            </p>
+                            <ul className="space-y-4 text-sm font-light text-white/60">
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961] mt-1"><CheckCircle2 size={16} /></span>
+                                    <div>
+                                        <strong className="text-white/90">Beyond Software Watchdogs:</strong> Enthusiast setups rely on internal software watchdogs or Docker restart policies. When the OS kernel panics or the network stack completely freezes, those fail. The <strong>Vœrynth Sentinel</strong> is an isolated out-of-band hardware solution that physically cuts and restores power, guaranteeing recovery even from catastrophic host lockups.
+                                    </div>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961] mt-1"><CheckCircle2 size={16} /></span>
+                                    <div>
+                                        <strong className="text-white/90">Autonomous Daily Backup Restoration:</strong> In the event of a severe crash or data corruption that survives a power-cycle, the primary server is engineered to automatically pull and restore the last known stable system backup (which is taken autonomously every day), minimizing MTTR (Mean Time To Recovery) to mere minutes with zero human intervention.
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -932,6 +968,50 @@ if (state === 'on') {
 }`}
                                 />
                             </div>
+
+                            {/* NEW: VOERYNTH SENTINEL SNIPPET */}
+                            <div>
+                                <h4 className="text-white/80 font-medium mb-4 flex items-center gap-3">
+                                    <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-[#C9A961] font-mono">7</span>
+                                    Vœrynth Sentinel Watchdog State Logic (OOB Recovery)
+                                </h4>
+                                <CodeSnippet
+                                    title="Python Daemon Pseudocode"
+                                    code={`# Runs on isolated Raspberry Pi 5 Telemetry Node
+import threading
+import requests
+import tinytuya
+
+# Target: Home Assistant Server
+CORE_URL = "http://192.168.2.66:8123"
+OBSERVER_URL = "http://192.168.2.66:4357"
+PLUG_IP = "192.168.2.159"
+
+def check_health():
+    core_ok = is_responsive(CORE_URL)
+    obs_ok = is_responsive(OBSERVER_URL)
+
+    if not core_ok and obs_ok:
+        print("Soft Failure: Core down, Observer up. Entering 120s grace period...")
+        return "SOFT"
+
+    if not core_ok and not obs_ok:
+        print("Hard Failure: Connection Refused. Initiating hardware intervention...")
+        trigger_physical_reboot(PLUG_IP)
+        return "HARD"
+
+def trigger_physical_reboot(ip):
+    relay = tinytuya.OutletDevice(DEVICE_ID, ip, LOCAL_KEY)
+    relay.set_status(True, switch=1)
+    print("Actuating Tuya RELAY OFF")
+    relay.turn_off()
+    sleep(12) # Allow capacitive discharge
+    print("Actuating Tuya RELAY ON")
+    relay.turn_on()
+    enter_boot_grace(180) # Prevent destructive boot loops
+`}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1003,6 +1083,8 @@ if (state === 'on') {
                     </p>
                 </div>
             </Section>
+
+
 
             {/* I: FAQ */}
             <Section className="py-24 bg-[#050505] border-t border-white/5">

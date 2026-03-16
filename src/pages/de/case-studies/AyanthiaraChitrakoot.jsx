@@ -252,7 +252,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
             {/* UPGRADE A: METRICS STRIP */}
             <Section className="bg-[#050505] border-y border-white/5 py-12">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-x divide-white/5">
                         <div className="px-4">
                             <h4 className="text-3xl font-light text-[#D4AF37] mb-2">40+</h4>
                             <p className="text-white/50 text-xs tracking-widest uppercase">Automatisierungen</p>
@@ -268,6 +268,10 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                         <div className="px-4">
                             <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">Zigbee / Matter / LAN</h4>
                             <p className="text-white/50 text-xs tracking-widest uppercase">Steuerungsprotokolle</p>
+                        </div>
+                        <div className="px-4 border-t border-white/5 md:border-t-0 pt-6 md:pt-0">
+                            <h4 className="text-x font-light text-[#D4AF37] mb-2 text-sm md:text-lg flex flex-col justify-center h-10">OOB Sentinel</h4>
+                            <p className="text-white/50 text-xs tracking-widest uppercase">Hardware-Watchdog</p>
                         </div>
                     </div>
                 </div>
@@ -316,7 +320,8 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                 "Automatische Scharfschaltung bei Abwesenheit; automatische Entschärfung bei Ankunft",
                                 "Präsenzsimulation bei Abwesenheit (Einbruchschutz-Realismus)",
                                 "Umweltbewusstsein: Wetter, Luftfeuchtigkeit, Wind, Energie, Luftqualität (sofern verfügbar)",
-                                "Sprachassistenten mit Statusanzeigen (Hört zu / Denkt nach / Antwortet)"
+                                "Sprachassistenten mit Statusanzeigen (Hört zu / Denkt nach / Antwortet)",
+                                "Autonome Hardware-Level-Wiederherstellung (Vœrynth Sentinel Watchdog)"
                             ].map((bullet, idx) => (
                                 <li key={idx} className="flex items-start gap-4">
                                     <span className="mt-1.5"><ChevronRight size={14} className="text-[#C9A961]" /></span>
@@ -331,6 +336,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                             { label: "Szenen-Engine", icon: Layers },
                             { label: "Lokale Sprache", icon: Server },
                             { label: "Sicherheitsschleife", icon: ShieldAlert },
+                            { label: "Hardware-Watchdog", icon: Zap },
                             { label: "Energie- + Gesundheitsdeck", icon: HeartPulse },
                             { label: "Manuelle Übersteuerung immer verfügbar", icon: Lock }
                         ].map((chip, idx) => (
@@ -598,6 +604,10 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                         <span className="text-white/90 font-normal text-xs tracking-wider uppercase">Vœrynth OS 5.0.1 (Interface-Ebene)</span>
                                         <span className="text-white/50 text-xs leading-relaxed">Benutzerdefiniertes Neural-Interface-OS — in dieser Beta-Umgebung umgangen; direkt gegen rohes HA Lovelace auf Belastbarkeit getestet.</span>
                                     </li>
+                                    <li className="flex flex-col gap-1 pt-2 border-t border-white/5">
+                                        <span className="text-white/90 font-normal text-xs tracking-wider uppercase">Vœrynth Sentinel (OOB-Wiederherstellung)</span>
+                                        <span className="text-white/50 text-xs leading-relaxed">Isolierter Out-of-Band-Hardware-Telemetry-Daemon auf einem separaten Pi 5, der bifurkierte Gesundheitsprüfungen und mechanische Stromzyklen über ein Tuya Smart Relais durchführt.</span>
+                                    </li>
                                 </ul>
                                 <div className="mt-6 flex flex-wrap gap-3">
                                     <a href="/de/os" className="inline-flex items-center gap-1.5 text-[10px] tracking-widest text-[#C9A961] border border-[#D4AF37]/20 px-3 py-1.5 rounded hover:bg-[#D4AF37]/5 transition-colors">OS ANSEHEN →</a>
@@ -630,7 +640,8 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                     <li><strong className="text-white/90 font-normal">Präsenz:</strong> Aqara FP2 Zonen (Wohnen/Essen) + Kamera-Personenerkennungssensoren</li>
                                     <li><strong className="text-white/90 font-normal">Kameras:</strong> TC71 Streams (Wohnen + Eingang) + zusätzliche Kameras</li>
                                     <li><strong className="text-white/90 font-normal">Schloss:</strong> Matter-fähiges Hauptschloss + Türsensor + Batterieüberwachung</li>
-                                    <li><strong className="text-white/90 font-normal">Steckdosen:</strong> Tapo-Steckerleiste/Smart Plugs (Arbeitsplatz, Beschilderung, etc.)</li>
+                                    <li><strong className="text-white/90 font-normal">Steckdosen:</strong> Tapo-Steckerleiste/Smart Plugs</li>
+                                    <li><strong className="text-white/90 font-normal">Watchdog:</strong> Raspberry Pi 5 + Tuya Smart-Relais (OOB-Wiederherstellung)</li>
                                     <li><strong className="text-white/90 font-normal">Unterhaltung:</strong> Android TV + Remote-Integration</li>
                                     <li><strong className="text-white/90 font-normal">Personal:</strong> Gesundheitsmetriken von Telefon + Smartwatch</li>
                                 </ul>
@@ -639,7 +650,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                             <div className="bg-[#050505] border border-white/5 p-8 rounded-lg flex-1">
                                 <h4 className="text-[#C9A961] text-xs tracking-widest uppercase mb-6 flex items-center gap-2"><Activity size={14} /> Protokolle &amp; Transport</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Zigbee (Hue-Ökosystem)', 'Matter (Türschloss)', 'WLAN / LAN', 'RTSP/Streaming', 'Lokale TTS-Ausgabe', 'Cloud TTS (optionale Qualitätsschleife)'].map((p, i) => (
+                                    {['Zigbee (Hue-Ökosystem)', 'Matter (Türschloss)', 'WLAN / LAN', 'tinytuya (Abfeuerung)', 'HTTP/REST (Telemetrie)', 'RTSP/Streaming', 'Lokale TTS-Ausgabe', 'Cloud TTS (optionale Qualitätsschleife)'].map((p, i) => (
                                         <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 text-xs text-white/70 rounded">{p}</span>
                                     ))}
                                 </div>
@@ -651,6 +662,7 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                     <li>• Manueller Rückfall immer verfügbar</li>
                                     <li>• Automatisierungen bestimmen den Alltag; das Dashboard verfeinert ihn</li>
                                     <li>• Sicherheitslogik ist zustandsbehaftet + persistent, solange scharfgeschaltet</li>
+                                    <li>• Isolierte OOB-Wiederherstellung bewältigt kritische Ausfallzustände</li>
                                 </ul>
                             </div>
                         </div>
@@ -672,6 +684,30 @@ export default function DeCaseStudyAyanthiaraChitrakoot() {
                                 </li>
                                 <li className="flex gap-3">
                                     <span className="text-[#C9A961]">—</span> Jede kritische Aktion wird protokolliert und ist umkehrbar.
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* UPGRADE C: HIGH AVAILABILITY & RECOVERY */}
+                        <div className="mt-8 bg-[#0A0A0A] border border-[#D4AF37]/30 p-8 rounded-lg">
+                            <h4 className="text-[#C9A961] text-sm tracking-widest uppercase mb-4 flex items-center gap-2">
+                                <Server size={16} /> Enterprise-Grade Zuverlässigkeit & Wiederherstellung
+                            </h4>
+                            <p className="text-white/70 text-sm font-light leading-relaxed mb-4">
+                                Was unterscheidet dies von einer standardmäßigen Enthusiasten-Smart-Home-Installation?
+                            </p>
+                            <ul className="space-y-4 text-sm font-light text-white/60">
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961] mt-1"><CheckCircle2 size={16} /></span>
+                                    <div>
+                                        <strong className="text-white/90">Jenseits von Software-Watchdogs:</strong> Enthusiasten-Setups verlassen sich oft auf interne Software-Watchdogs oder Docker-Neustartrichtlinien. Wenn der OS-Kernel abstürzt oder der Netzwerk-Stack komplett einfriert, versagen diese. Der <strong>Vœrynth Sentinel</strong> ist eine isolierte Out-of-Band-Hardwarelösung, die physisch den Strom unterbricht und wiederherstellt, und so eine Wiederherstellung selbst bei katastrophalen Host-Blockaden garantiert.
+                                    </div>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="text-[#C9A961] mt-1"><CheckCircle2 size={16} /></span>
+                                    <div>
+                                        <strong className="text-white/90">Autonome Wiederherstellung des täglichen Backups:</strong> Im Falle eines schweren Absturzes oder einer Datenkorruption, die einen Stromzyklus überdauert, ist der primäre Server so konzipiert, dass er automatisch das letzte bekannte stabile System-Backup (welches täglich autonom erstellt wird) zieht und wiederherstellt, wodurch die MTTR (Mittlere Reparaturzeit) auf wenige Minuten ohne menschliches Eingreifen minimiert wird.
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -903,6 +939,50 @@ if (state === 'on') {
 }`}
                                 />
                             </div>
+
+                            {/* NEW: VOERYNTH SENTINEL SNIPPET */}
+                            <div>
+                                <h4 className="text-white/80 font-medium mb-4 flex items-center gap-3">
+                                    <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-[#C9A961] font-mono">7</span>
+                                    Vœrynth Sentinel Watchdog Statuslogik (OOB-Wiederherstellung)
+                                </h4>
+                                <CodeSnippet
+                                    title="Python Daemon Pseudocode"
+                                    code={`# Runs on isolated Raspberry Pi 5 Telemetry Node
+import threading
+import requests
+import tinytuya
+
+# Target: Home Assistant Server
+CORE_URL = "http://192.168.2.66:8123"
+OBSERVER_URL = "http://192.168.2.66:4357"
+PLUG_IP = "192.168.2.159"
+
+def check_health():
+    core_ok = is_responsive(CORE_URL)
+    obs_ok = is_responsive(OBSERVER_URL)
+
+    if not core_ok and obs_ok:
+        print("Soft Failure: Core down, Observer up. Entering 120s grace period...")
+        return "SOFT"
+
+    if not core_ok and not obs_ok:
+        print("Hard Failure: Connection Refused. Initiating hardware intervention...")
+        trigger_physical_reboot(PLUG_IP)
+        return "HARD"
+
+def trigger_physical_reboot(ip):
+    relay = tinytuya.OutletDevice(DEVICE_ID, ip, LOCAL_KEY)
+    relay.set_status(True, switch=1)
+    print("Actuating Tuya RELAY OFF")
+    relay.turn_off()
+    sleep(12) # Allow capacitive discharge
+    print("Actuating Tuya RELAY ON")
+    relay.turn_on()
+    enter_boot_grace(180) # Prevent destructive boot loops
+`}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -974,6 +1054,8 @@ if (state === 'on') {
                     </p>
                 </div>
             </Section>
+
+
 
             {/* I: FAQ */}
             <Section className="py-24 bg-[#050505] border-t border-white/5">
